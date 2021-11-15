@@ -1,0 +1,42 @@
+{
+  "data_implementations": [
+    {
+      "id": "ZELJ7HMZP9",
+      "local_id": "dataLocalId1233",
+      "name": "Measured value",
+      "description": "Shows the measured value",
+      "data_property_implementations": [
+        {
+          "id": "6DP0NHWOOM",
+          "index": 1,
+          "local_id": "dataProperty1111",
+          "name": "Temperature",
+          "description": "Show temperature values in degrees Celsius",
+          "data_type": "float",
+          "is_primary_key": false,
+          "is_required": true
+        },
+        {
+          "id": "2MV2LHZKXM",
+          "index": 2,
+          "local_id": "dataProperty2222",
+          "name": "Humidity",
+          "description": "Humidity values is shown as relative humidity",
+          "data_type": "float",
+          "is_primary_key": false,
+          "is_required": true
+        },
+        {
+          "id": "KD6RZHL5YM",
+          "index": 3,
+          "local_id": "dataProperty3333",
+          "name": "Time stamp",
+          "description": "Show the timestamp of values",
+          "data_type": "datetime",
+          "is_primary_key": false,
+          "is_required": false
+        }
+      ]
+    }
+  ]
+}

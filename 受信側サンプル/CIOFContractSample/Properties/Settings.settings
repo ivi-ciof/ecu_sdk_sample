@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CIOFContractSample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SAVE_TYPE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">data</Value>
+    </Setting>
+    <Setting Name="POLLING_TYPE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">get</Value>
+    </Setting>
+    <Setting Name="LOCAL_SERVICE_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">servicelocalid3</Value>
+    </Setting>
+    <Setting Name="LOCAL_DELETE_SERVICE_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">local_delete_service_id</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

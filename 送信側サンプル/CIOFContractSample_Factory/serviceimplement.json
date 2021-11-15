@@ -1,0 +1,20 @@
+{
+  "service_implementations": [
+    {
+      "id": "EO453H9VPN",
+      "local_id": "testserviceid01",
+      "process_implementations": [
+        {
+          "id": "95NJNHDOG4",
+          "local_id": "testprocessid01",
+          "event_implementations": [
+            {
+              "id": "7RGMOSQKRP",
+              "local_id": "testeventid01"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

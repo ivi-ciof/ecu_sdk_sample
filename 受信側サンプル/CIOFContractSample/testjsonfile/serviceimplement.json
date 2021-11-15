@@ -1,0 +1,20 @@
+{
+  "service_implementations": [
+    {
+      "id": "ID",
+      "local_id": "230c51b5-18b1-4122-ba59-c9593ce70cdd",
+      "process_implementations": [
+        {
+          "id": "ID",
+          "local_id": "7ad276da-4556-4f9c-bf01-e0b18b3c6f5c",
+          "event_implementations": [
+            {
+              "id": "ID",
+              "local_id": "42ade70d-2030-4226-aba1-055439f2a8e0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

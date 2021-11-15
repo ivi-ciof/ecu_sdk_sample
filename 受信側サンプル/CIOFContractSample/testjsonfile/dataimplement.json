@@ -1,0 +1,25 @@
+{
+    "data_implementations": [
+        {
+
+            "id": "ID",
+            "local_id": "内部ID",
+            "data_property_implementations": [
+                {
+                    "id": "ID",
+                    "local_id": "内部ID"
+                }
+            ]
+        },
+        {
+            "id": "ID",
+            "local_id": "内部ID",
+            "data_property_implementations": [
+                {
+                    "id": "ID",
+                    "local_id": "内部ID"
+                }
+            ]
+        }
+    ]
+}

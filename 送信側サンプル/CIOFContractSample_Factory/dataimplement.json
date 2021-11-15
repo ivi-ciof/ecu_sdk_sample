@@ -1,0 +1,33 @@
+{
+    "data_implementations": [
+      {
+
+        "id": "ID",
+        "local_id": "8e08a412-e1ec-452f-a91d-8b74a06ec7c2",
+        "data_property_implementations": [
+          {
+            "id": "XMZ2ZHQK7D",
+            "local_id": "60d37f40-5b74-4f25-b518-f065879d94a9",
+          },
+          {
+            "id": "GMGP7HVRPM",
+            "local_id": "dc9cda60-4501-4fa9-bca4-9a5d8e35f221",
+          },
+          {
+            "id": "3DW6YHZ69D",
+            "local_id": "abe224c3-01ad-4cdb-b35e-e628c8cd2af0",
+          }
+        ]
+      },
+        {
+            "id": "ID",
+            "local_id": "内部ID",
+            "data_property_implementations": [
+                {
+                    "id": "ID",
+                    "local_id": "内部ID"
+                }
+            ]
+        }
+    ]
+}
