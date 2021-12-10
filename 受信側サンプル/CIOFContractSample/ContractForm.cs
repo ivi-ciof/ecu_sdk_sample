@@ -20,24 +20,26 @@ namespace CIOFContractSample
 				&& contractRoot.contracts != null
 				&& contractRoot.contracts.Any())
 			{
-				foreach (var contract in contractRoot.contracts)
+				foreach (var contractModel in contractRoot.contracts)
 				{
-					var eventCount = contract.event_implementations_id.Count();
-
-					for (int i = 0; i < eventCount; i++)
+					for (int i = 0; i < contractModel.event_implementations_id.Length; i++)
 					{
-						dataGridView1.Rows.Add(contract.id,
-							 contract.contract_type,
-							 contract.send_type,
-							 contract.service_implementation_id,
-							 contract.service_implementation_local_id,
-							 contract.process_implementation_id,
-							 contract.process_implementation_local_id,
-							 contract.event_implementations_id[i],
-							 contract.event_implementations_local_id[i]);
+						dgvContract.Rows.Add(contractModel.id
+										   , contractModel.contract_type
+										   , contractModel.send_type
+										   , contractModel.service_implementation_id
+										   , contractModel.service_implementation_local_id
+										   , contractModel.process_implementation_id
+										   , contractModel.process_implementation_local_id
+										   , contractModel.event_implementations_id[i]
+										   , contractModel.event_implementations_local_id[i]
+										   , contractModel.data_implementation_id
+										   , contractModel.data_implementation_local_id
+										   , contractModel.start_datetime?.ToString()
+										   , contractModel.end_datetime?.ToString());
 					}
-					
-				}				
+
+				}
 			}			
 		}
 	}

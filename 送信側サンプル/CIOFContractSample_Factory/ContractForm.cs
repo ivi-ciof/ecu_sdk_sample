@@ -20,11 +20,15 @@ namespace CIOFContractSample_Factory
 				{
                     dgvContract.Rows.Add(contractModel.id
                                        , contractModel.contract_type
-                                       , contractModel.data_implementation_local_id
+                                       , contractModel.send_type
+                                       , contractModel.service_implementation_id                                       
                                        , contractModel.service_implementation_local_id
+                                       , contractModel.process_implementation_id
                                        , contractModel.process_implementation_local_id
                                        , contractModel.event_implementations_id[i]
                                        , contractModel.event_implementations_local_id[i]
+                                       , contractModel.data_implementation_id
+                                       , contractModel.data_implementation_local_id
                                        , contractModel.start_datetime?.ToString()
                                        , contractModel.end_datetime?.ToString());
                 }

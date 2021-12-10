@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>H4sIAAAAAAAEAO1ayW7rNhTdF+g/CFrnWRk2bSq/h8RO2qCZGiVv1Q0tXTtEKVIgqSD+ti76Sf2FXmqW6EF2HKN9DbyxOJw7kDw6vPbff/7lf3mNmfMCUlHBh+7R4NB1gIcionw2dFM9/fSD++Xz99/5F1H86nwtx52YcTiTq6H7rHVy6nkqfIaYqEFMQymUmOpBKGKPRMI7Pjz80Ts68gAhXMRyHP8h5ZrGkD3g40jwEBKdEnYjImCqaMeeIEN1bkkMKiEhDN2L0RMO15KEOiBxwmCQz3GdM0YJ+hMAm7oO4VxootHb0ycFgZaCz4IEGwh7nCeA46aEKSiiOK2H9w3o8NgE5NUTS6gwVVrEGwIenRQZ8rrTt8qzW2UQc3iBudZzE3WWx6E7Jpo8QChk5Dpdc6cjJs3Q5Yke1NMPHGvQQbVJcC+Zz4EzSplOJQw5pDiQHTj36YTR8FeYP4o/gA95yljTYXQZ+1oN2HQvRQJSzx9gWoRxhe577Xled2I1rTEnD++K65Nj17lF42TCoNoPjVQEWkj4GThIoiG6J1qD5AYDsoxa1ju2TJ5qe7gF8Uy5zg15vQY+089DF7+6ziV9hahsKXx44hSPIE7SMoV1Zh4hToyHmOLS1lhghmFBcKuRfkljGmWBvQnmEU92oHE3vHvoIwm4MmYvRoCnXO7VoAmzyhS25s8b5uopifYbQW1QRjuJYAwMNFyyWYl0LgQDwtcA+V5NSyvJ6lGSCN7IWB2MD9paeXxNssrs7IG/9kSTH1zxjXKF2aqE4m4vjOQHenxu2uFVLyAMTF7BGapIRNvrHDcAbeklVJm1K7nUHDS5yVsN1OGhRWgW3S1KRBVyLZS9XCmXitpbIqn9G5IkuFsaErtocYJcX48+BZtLzjjH8EK1QHlW3laWkKDIDDq9aBo9vaRSaRP/hJhtMIpia1h3gZfkvLRmr2GXo+tFKOeY7/m8Hiq4i1fn9BLDjJF1s4ih8qylwK3J2a2HMCIXvANGgqUxX/YeWTW7ZNkmQtnWH6WlNZtQrY7+eLXibILVrRt4VovOll91c38s+1XRhLR7t0POGXQZct7bH9l+OTSR7d5tkMu3wGLksneDPVm/Dlrbsm62sXyvc7a6h9mzTnNHa3UJohd9WMy9Ew7pkv3mRLIW4X3YxNKIrTPX7dw3S32c3//p+bX0UXdIZb3SSR095BfaZH0d0hIr+RDXwSS90CgTKnOlIc6UwiD47ZpqqHtvCKdTUDq/S7q4CMRRIpUIPRj8rrFnEE1+6hQ1/z0FRk+piPWuMu79lkw56v619+BNby+tiyp/ITJ8JtK+d9WwW5bvpkwQ/ebq3XYoVvFuV3Euu3+/B37zsmroTe/yur0rh5fdrrd22LpdT+i69d+6CvdtnOglpa5drfD7EMbHQfrPHaRuicoudPQtQK2pP+UaBEOfCPQ993b7+lSf8tQii7uqYdlazPeavxz7Y1B0VkOY35E5hEbU1KDlmCs+FeU6Y8RNj8ohnW1wA5oYXXYmNZ0iQWB3CEpltdavhKXmZhdPILrid6lOUn2mFMQT1ipb+N5q+1mhru2zf5eYJ7WLENBNao7BHT9PKYsqvy8X7OAlEGavFpSLXgXaUO9sXiHdCt4TqEjfGBLghrCN8GEIpu54QF5gG9+QTa5hRsJ5qaqXg6xfiHba/TElM0liVWDU882/ITzzd4jP/wCrKs9uQCEAAA==</value>
-  </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
-  </data>
+  <metadata name="colDataId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colDataLocalId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colServiceId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colDescription.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colSetting.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

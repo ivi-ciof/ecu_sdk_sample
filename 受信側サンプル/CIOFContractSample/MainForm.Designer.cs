@@ -48,6 +48,7 @@ namespace CIOFContractSample
 			this.btnShowServiceList = new System.Windows.Forms.Button();
 			this.btnShowDataList = new System.Windows.Forms.Button();
 			this.btnShowCalendar = new System.Windows.Forms.Button();
+			this.btnShowHIstory = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
 			this.gbxSaveType.SuspendLayout();
 			this.gbxPollingMethod.SuspendLayout();
@@ -72,7 +73,7 @@ namespace CIOFContractSample
 			// 
 			// btnInitialSetting
 			// 
-			this.btnInitialSetting.Location = new System.Drawing.Point(32, 205);
+			this.btnInitialSetting.Location = new System.Drawing.Point(315, 13);
 			this.btnInitialSetting.Name = "btnInitialSetting";
 			this.btnInitialSetting.Size = new System.Drawing.Size(115, 44);
 			this.btnInitialSetting.TabIndex = 6;
@@ -82,7 +83,7 @@ namespace CIOFContractSample
 			// 
 			// btnStop
 			// 
-			this.btnStop.Location = new System.Drawing.Point(179, 205);
+			this.btnStop.Location = new System.Drawing.Point(315, 210);
 			this.btnStop.Name = "btnStop";
 			this.btnStop.Size = new System.Drawing.Size(115, 44);
 			this.btnStop.TabIndex = 7;
@@ -132,7 +133,7 @@ namespace CIOFContractSample
 			// 
 			// btnStart
 			// 
-			this.btnStart.Location = new System.Drawing.Point(32, 268);
+			this.btnStart.Location = new System.Drawing.Point(444, 13);
 			this.btnStart.Margin = new System.Windows.Forms.Padding(2);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(115, 44);
@@ -143,7 +144,7 @@ namespace CIOFContractSample
 			// 
 			// btnShowContract
 			// 
-			this.btnShowContract.Location = new System.Drawing.Point(179, 268);
+			this.btnShowContract.Location = new System.Drawing.Point(568, 83);
 			this.btnShowContract.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowContract.Name = "btnShowContract";
 			this.btnShowContract.Size = new System.Drawing.Size(115, 44);
@@ -154,7 +155,7 @@ namespace CIOFContractSample
 			// 
 			// btnShowEnvironmentData
 			// 
-			this.btnShowEnvironmentData.Location = new System.Drawing.Point(32, 330);
+			this.btnShowEnvironmentData.Location = new System.Drawing.Point(315, 150);
 			this.btnShowEnvironmentData.Name = "btnShowEnvironmentData";
 			this.btnShowEnvironmentData.Size = new System.Drawing.Size(115, 44);
 			this.btnShowEnvironmentData.TabIndex = 10;
@@ -164,7 +165,7 @@ namespace CIOFContractSample
 			// 
 			// btnSendRequest
 			// 
-			this.btnSendRequest.Location = new System.Drawing.Point(179, 331);
+			this.btnSendRequest.Location = new System.Drawing.Point(444, 150);
 			this.btnSendRequest.Name = "btnSendRequest";
 			this.btnSendRequest.Size = new System.Drawing.Size(115, 43);
 			this.btnSendRequest.TabIndex = 11;
@@ -219,7 +220,7 @@ namespace CIOFContractSample
 			// 
 			this.rbtnGetData.AutoSize = true;
 			this.rbtnGetData.Checked = true;
-			this.rbtnGetData.Location = new System.Drawing.Point(27, 18);
+			this.rbtnGetData.Location = new System.Drawing.Point(16, 18);
 			this.rbtnGetData.Name = "rbtnGetData";
 			this.rbtnGetData.Size = new System.Drawing.Size(69, 16);
 			this.rbtnGetData.TabIndex = 0;
@@ -229,7 +230,7 @@ namespace CIOFContractSample
 			// 
 			// btnShowServiceList
 			// 
-			this.btnShowServiceList.Location = new System.Drawing.Point(32, 395);
+			this.btnShowServiceList.Location = new System.Drawing.Point(315, 83);
 			this.btnShowServiceList.Name = "btnShowServiceList";
 			this.btnShowServiceList.Size = new System.Drawing.Size(115, 44);
 			this.btnShowServiceList.TabIndex = 12;
@@ -239,7 +240,7 @@ namespace CIOFContractSample
 			// 
 			// btnShowDataList
 			// 
-			this.btnShowDataList.Location = new System.Drawing.Point(179, 395);
+			this.btnShowDataList.Location = new System.Drawing.Point(444, 83);
 			this.btnShowDataList.Name = "btnShowDataList";
 			this.btnShowDataList.Size = new System.Drawing.Size(114, 44);
 			this.btnShowDataList.TabIndex = 13;
@@ -249,7 +250,7 @@ namespace CIOFContractSample
 			// 
 			// btnShowCalendar
 			// 
-			this.btnShowCalendar.Location = new System.Drawing.Point(32, 454);
+			this.btnShowCalendar.Location = new System.Drawing.Point(692, 83);
 			this.btnShowCalendar.Name = "btnShowCalendar";
 			this.btnShowCalendar.Size = new System.Drawing.Size(115, 44);
 			this.btnShowCalendar.TabIndex = 14;
@@ -257,11 +258,21 @@ namespace CIOFContractSample
 			this.btnShowCalendar.UseVisualStyleBackColor = true;
 			this.btnShowCalendar.Click += new System.EventHandler(this.btnShowCalendar_Click);
 			// 
+			// btnShowHIstory
+			// 
+			this.btnShowHIstory.Location = new System.Drawing.Point(568, 150);
+			this.btnShowHIstory.Name = "btnShowHIstory";
+			this.btnShowHIstory.Size = new System.Drawing.Size(114, 44);
+			this.btnShowHIstory.TabIndex = 15;
+			this.btnShowHIstory.Text = "Show History";
+			this.btnShowHIstory.UseVisualStyleBackColor = true;
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(354, 540);
+			this.ClientSize = new System.Drawing.Size(819, 277);
+			this.Controls.Add(this.btnShowHIstory);
 			this.Controls.Add(this.btnShowCalendar);
 			this.Controls.Add(this.btnShowDataList);
 			this.Controls.Add(this.btnShowServiceList);
@@ -284,7 +295,7 @@ namespace CIOFContractSample
 			this.Name = "MainForm";
 			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "CIOFContractSample";
+			this.Text = "OfficeSide";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).EndInit();
 			this.gbxSaveType.ResumeLayout(false);
@@ -317,6 +328,7 @@ namespace CIOFContractSample
 		private System.Windows.Forms.Button btnShowServiceList;
 		private System.Windows.Forms.Button btnShowDataList;
 		private System.Windows.Forms.Button btnShowCalendar;
+		private System.Windows.Forms.Button btnShowHIstory;
 	}
 }
 

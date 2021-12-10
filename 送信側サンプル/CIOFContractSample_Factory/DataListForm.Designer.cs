@@ -1,8 +1,8 @@
 ﻿
-namespace CIOFContractSample
+namespace CIOFContractSample_Factory
 {
 	partial class DataListForm
-	{
+    {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -34,6 +34,7 @@ namespace CIOFContractSample
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvDataList = new System.Windows.Forms.DataGridView();
 			this.btnRefresh = new System.Windows.Forms.Button();
 			this.btnExportJson = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@ namespace CIOFContractSample
 			this.colServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colSettings = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.colSetting = new System.Windows.Forms.DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDataList)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -51,8 +52,6 @@ namespace CIOFContractSample
 			// 
 			this.dgvDataList.AllowUserToAddRows = false;
 			this.dgvDataList.AllowUserToDeleteRows = false;
-			this.dgvDataList.AllowUserToResizeColumns = false;
-			this.dgvDataList.AllowUserToResizeRows = false;
 			this.dgvDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvDataList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDataId,
@@ -60,14 +59,15 @@ namespace CIOFContractSample
             this.colServiceId,
             this.colName,
             this.colDescription,
-            this.colSettings});
+            this.colSetting});
 			this.dgvDataList.Location = new System.Drawing.Point(12, 72);
-			this.dgvDataList.MultiSelect = false;
+			this.dgvDataList.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvDataList.Name = "dgvDataList";
 			this.dgvDataList.RowHeadersVisible = false;
+			this.dgvDataList.RowTemplate.Height = 27;
 			this.dgvDataList.Size = new System.Drawing.Size(807, 426);
 			this.dgvDataList.TabIndex = 0;
-			this.dgvDataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataList_CellContentClick);
+			this.dgvDataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataImple_CellContentClick);
 			// 
 			// btnRefresh
 			// 
@@ -77,6 +77,7 @@ namespace CIOFContractSample
 			this.btnRefresh.TabIndex = 1;
 			this.btnRefresh.Text = "refresh";
 			this.btnRefresh.UseVisualStyleBackColor = true;
+			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
 			// btnExportJson
 			// 
@@ -86,7 +87,6 @@ namespace CIOFContractSample
 			this.btnExportJson.TabIndex = 2;
 			this.btnExportJson.Text = "Export Json";
 			this.btnExportJson.UseVisualStyleBackColor = true;
-			this.btnExportJson.Click += new System.EventHandler(this.btnExportJson_Click);
 			// 
 			// btnUpdate
 			// 
@@ -105,7 +105,6 @@ namespace CIOFContractSample
 			this.colDataId.DefaultCellStyle = dataGridViewCellStyle1;
 			this.colDataId.HeaderText = "DataId";
 			this.colDataId.Name = "colDataId";
-			this.colDataId.ReadOnly = true;
 			this.colDataId.Width = 63;
 			// 
 			// colDataLocalId
@@ -115,7 +114,6 @@ namespace CIOFContractSample
 			this.colDataLocalId.DefaultCellStyle = dataGridViewCellStyle2;
 			this.colDataLocalId.HeaderText = "DataLocalId";
 			this.colDataLocalId.Name = "colDataLocalId";
-			this.colDataLocalId.ReadOnly = true;
 			this.colDataLocalId.Width = 90;
 			// 
 			// colServiceId
@@ -125,7 +123,6 @@ namespace CIOFContractSample
 			this.colServiceId.DefaultCellStyle = dataGridViewCellStyle3;
 			this.colServiceId.HeaderText = "ServiceId";
 			this.colServiceId.Name = "colServiceId";
-			this.colServiceId.ReadOnly = true;
 			this.colServiceId.Width = 77;
 			// 
 			// colName
@@ -135,7 +132,6 @@ namespace CIOFContractSample
 			this.colName.DefaultCellStyle = dataGridViewCellStyle4;
 			this.colName.HeaderText = "Name";
 			this.colName.Name = "colName";
-			this.colName.ReadOnly = true;
 			this.colName.Width = 59;
 			// 
 			// colDescription
@@ -145,16 +141,17 @@ namespace CIOFContractSample
 			this.colDescription.DefaultCellStyle = dataGridViewCellStyle5;
 			this.colDescription.HeaderText = "Description";
 			this.colDescription.Name = "colDescription";
-			this.colDescription.ReadOnly = true;
 			this.colDescription.Width = 88;
 			// 
-			// colSettings
+			// colSetting
 			// 
-			this.colSettings.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.colSettings.HeaderText = "Settings";
-			this.colSettings.Name = "colSettings";
-			this.colSettings.ReadOnly = true;
-			this.colSettings.Width = 53;
+			this.colSetting.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+			this.colSetting.DefaultCellStyle = dataGridViewCellStyle6;
+			this.colSetting.HeaderText = "Setting";
+			this.colSetting.Name = "colSetting";
+			this.colSetting.Width = 47;
 			// 
 			// DataListForm
 			// 
@@ -166,11 +163,13 @@ namespace CIOFContractSample
 			this.Controls.Add(this.btnRefresh);
 			this.Controls.Add(this.dgvDataList);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.Margin = new System.Windows.Forms.Padding(2);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "DataListForm";
+			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "DataListForm";
+			this.Text = "DataImplListForm";
 			((System.ComponentModel.ISupportInitialize)(this.dgvDataList)).EndInit();
 			this.ResumeLayout(false);
 
@@ -187,6 +186,6 @@ namespace CIOFContractSample
 		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
-		private System.Windows.Forms.DataGridViewButtonColumn colSettings;
+		private System.Windows.Forms.DataGridViewButtonColumn colSetting;
 	}
 }

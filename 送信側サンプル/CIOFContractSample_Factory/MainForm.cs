@@ -36,7 +36,7 @@ namespace CIOFContractSample_Factory
         /// </summary>
         private readonly string LOCAL_SERVICE_ID = "testserviceid01";
 
-        private readonly string LOCAL_PROCESS_ID = "testprocessid01";
+        private readonly string LOCAL_PROCESS_ID = "6f56bafa-c922-4330-8b4f-cc999af7846d";
 
         /// <summary>
         /// コントローラモデル
@@ -62,7 +62,6 @@ namespace CIOFContractSample_Factory
             InitializeComponent();
             var currentDirectory = Directory.GetCurrentDirectory();
             controllerModel = new ControllerModel(currentDirectory);
-            ChangeButtonEnable(ControllerStatus.INIT);
             SetEnvironmentData();
         }
 
@@ -73,43 +72,6 @@ namespace CIOFContractSample_Factory
             this.dgvEnvironmentData.Rows.Add(22.1, 55.0, "2021/7/13");
             this.dgvEnvironmentData.Rows.Add(15.1, 43.0, "2021/8/13");
             this.dgvEnvironmentData.Rows.Add(18.1, 44.0, "2021/9/13");
-        }
-
-        /// <summary>
-        /// ボタンのEnableを制御
-        /// </summary>
-        /// <param name="controllerStatus">有効にしたいモードを指定</param>
-        private void ChangeButtonEnable(ControllerStatus controllerStatus)
-        {
-            switch (controllerStatus)
-            {
-                case ControllerStatus.INIT:
-                    gbox1th.Enabled = true;
-                    gbox2th.Enabled = false;
-                    gbox3th.Enabled = false;
-                    gbox4th.Enabled = false;
-                    break;
-                case ControllerStatus.START:
-                    gbox1th.Enabled = false;
-                    gbox2th.Enabled = true;
-                    gbox3th.Enabled = false;
-                    gbox4th.Enabled = false;
-                    break;
-
-                case ControllerStatus.POLLING:
-                case ControllerStatus.STOP:
-                    gbox1th.Enabled = false;
-                    gbox2th.Enabled = false;
-                    gbox3th.Enabled = true;
-                    gbox4th.Enabled = true;
-                    break;
-                default:
-                    gbox1th.Enabled = true;
-                    gbox2th.Enabled = true;
-                    gbox3th.Enabled = true;
-                    gbox4th.Enabled = true;
-                    break;
-            }
         }
 
         /// <summary>
@@ -223,9 +185,9 @@ namespace CIOFContractSample_Factory
                     foreach (var data in targetSensorDataList)
                     {
                         var retDic = CIOF_SDK.Util.TypeUtil.CreateSendData();
-                        retDic.Add("Temperature", data.Tempareture);
-                        retDic.Add("Humidity", data.Humidity);
-                        retDic.Add("Time stamp", Convert.ToDateTime(data.MeasureDate));
+                        retDic.Add("温度", data.Tempareture);
+                        retDic.Add("湿度", data.Humidity);
+                        retDic.Add("計測日時", Convert.ToDateTime(data.MeasureDate));
 
                         sendContentsList.Add(retDic);
                     }
@@ -258,6 +220,8 @@ namespace CIOFContractSample_Factory
                     // DB保存
                     db.SaveChanges();
                 }
+
+                MessageBox.Show("データを送信しました。");
             }
         }
 
@@ -295,7 +259,7 @@ namespace CIOFContractSample_Factory
             var dataPath = Path.Combine(currentDirectory, "dataimplement.json");
             controllerModel.InitialSetting(this.txtIP.Text, (int)this.nudPollingRate.Value, servicePath, dataPath);
 
-            ChangeButtonEnable(ControllerStatus.START);
+            MessageBox.Show("初期設定を行いました。");
         }
 
 
@@ -307,7 +271,7 @@ namespace CIOFContractSample_Factory
         private void btnStart_Click(object sender, EventArgs e)
         {
             controllerModel.PollingStart();
-            ChangeButtonEnable(ControllerStatus.POLLING);
+            MessageBox.Show("コントローラを起動しました。");
         }
 
         /// <summary>
@@ -322,7 +286,6 @@ namespace CIOFContractSample_Factory
                 frm.ShowDialog();
             }
 
-            ChangeButtonEnable(ControllerStatus.POLLING);
         }
 
         /// <summary>
@@ -336,8 +299,6 @@ namespace CIOFContractSample_Factory
             {
                 frm.ShowDialog();
             }
-
-            ChangeButtonEnable(ControllerStatus.POLLING);
         }
 
         /// <summary>
@@ -347,12 +308,11 @@ namespace CIOFContractSample_Factory
         /// <param name="e"></param>
         private void btnDataImp_Click(object sender, EventArgs e)
         {
-            using (var frm = new DataImpListForm(controllerModel, controllerModel.DataImplementationsRoot))
+            using (var frm = new DataListForm(controllerModel, controllerModel.DataImplementationsRoot))
             {
                 frm.ShowDialog();
             }
 
-            ChangeButtonEnable(ControllerStatus.POLLING);
         }
 
         /// <summary>
@@ -367,7 +327,6 @@ namespace CIOFContractSample_Factory
                 form.ShowDialog();
             }
 
-            ChangeButtonEnable(ControllerStatus.POLLING);
         }
 
         /// <summary>
@@ -405,7 +364,7 @@ namespace CIOFContractSample_Factory
         private void btnStop_Click(object sender, EventArgs e)
         {
             controllerModel.Stop();
-            ChangeButtonEnable(ControllerStatus.INIT);
+            MessageBox.Show("コントローラを停止しました。");
         }
 
         /// <summary>
@@ -415,15 +374,7 @@ namespace CIOFContractSample_Factory
         /// <param name="e"></param>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (btnInitialSetting.Enabled)
-            {
-                controllerModel.Close();
-            }
-            else
-            {
-                MessageBox.Show("Stop Controller!");
-                e.Cancel = true;
-            }
+            controllerModel.Close();
         }
 
 		#endregion

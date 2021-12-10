@@ -231,17 +231,17 @@ namespace CIOFContractSample
 				this.tradeDataRecordList.Add(tradeDataInfo);
 				var dataRecordInfo = new DataRecord();
 				dataRecordInfo.DataId = dataId;
-				if (dict.ContainsKey("Temperature"))
+				if (dict.ContainsKey("温度"))
 				{
-					dataRecordInfo.Temperature = (double)dict["Temperature"];
+					dataRecordInfo.Temperature = (double)dict["温度"];
 				}
-				if (dict.ContainsKey("Humidity"))
+				if (dict.ContainsKey("湿度"))
 				{
-					dataRecordInfo.Humidity = (double)dict["Humidity"];
+					dataRecordInfo.Humidity = (double)dict["湿度"];
 				}
-				if (dict.ContainsKey("Time stamp"))
+				if (dict.ContainsKey("計測日時"))
 				{
-					dataRecordInfo.TimeStamp = ((DateTime)dict["Time stamp"]).ToShortDateString();
+					dataRecordInfo.TimeStamp = ((DateTime)dict["計測日時"]).ToShortDateString();
 				}				
 				
 

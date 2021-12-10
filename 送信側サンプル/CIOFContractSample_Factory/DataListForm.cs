@@ -1,20 +1,14 @@
 ﻿using CIOF_SDK;
 using CIOF_SDK.Model;
-using CIOF_SDK.Util;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CIOFContractSample
+namespace CIOFContractSample_Factory
 {
-	public partial class DataListForm : Form
-	{
+    public partial class DataListForm : Form
+    {
 		/// <summary>
 		/// コントローラモデル
 		/// </summary>
@@ -25,35 +19,26 @@ namespace CIOFContractSample
 		public List<DataStatus> DataStatusList { get; set; }
 
 		public DataListForm()
-		{
-			InitializeComponent();
-		}
+        {
+            InitializeComponent();
+        }
 
-		public DataListForm(ControllerModel controller)
-		{
-			InitializeComponent();
+        public DataListForm(ControllerModel controller, DataImplementationsRoot dataimplList)
+        {
+            InitializeComponent();
 
 			this.controllerModel = controller;
 
-			if (!this.controllerModel.IsControllerStart())
-			{
-				MessageBox.Show("コントローラが起動していません。");
-			}
-			else
-			{
-				DataList = controller.GetDataImplementations();
-				DataStatusList = createDataStatusList(DataList);
+			DataList = controller.GetDataImplementations();
+			DataStatusList = createDataStatusList(DataList);
 
-				foreach (var dataInfo in DataList.data_implementations)
-				{
-					this.dgvDataList.Rows.Add(dataInfo.id, dataInfo.local_id, dataInfo.service_implementation_id, dataInfo.name, dataInfo.description);
-				}
-			}
+			foreach (var dataImpl in dataimplList.data_implementations)
+            {
+                dgvDataList.Rows.Add(dataImpl.id, dataImpl.local_id, dataImpl.service_implementation_id, dataImpl.name, dataImpl.description);
+            }
+        }
 
-
-		}
-
-		private void dgvDataList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		private void dgvDataImple_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == 5)
 			{
@@ -134,17 +119,15 @@ namespace CIOFContractSample
 			}
 		}
 
-		private void btnUpdate_Click(object sender, EventArgs e)
+		private void btnRefresh_Click(object sender, System.EventArgs e)
+		{
+
+		}
+
+		private void btnUpdate_Click(object sender, System.EventArgs e)
 		{
 			controllerModel.PutDataImplementationStatusList(DataStatusList);
 			MessageBox.Show("データを更新しました。");
-		}
-
-		private void btnExportJson_Click(object sender, EventArgs e)
-		{
-			var filePath = FileUtil.ShowSaveFileDialog(string.Empty, "JSONファイル(*.json) | *.json");
-			FileUtil.SaveJsonFileBySpecifiedFineName<DataImplementationsRoot>(this.DataList, @filePath);
-			MessageBox.Show("jsonファイルを出力しました。");
 		}
 	}
 }

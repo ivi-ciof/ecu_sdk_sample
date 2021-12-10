@@ -38,7 +38,11 @@ namespace CIOFContractSample
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+			this.dgvContract = new System.Windows.Forms.DataGridView();
 			this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colContractType = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colSendType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,17 +52,21 @@ namespace CIOFContractSample
 			this.colProcessLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEventId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEventLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.colDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colDataLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// dataGridView1
+			// dgvContract
 			// 
-			this.dataGridView1.AllowUserToAddRows = false;
-			this.dataGridView1.AllowUserToDeleteRows = false;
-			this.dataGridView1.AllowUserToResizeColumns = false;
-			this.dataGridView1.AllowUserToResizeRows = false;
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dgvContract.AllowUserToAddRows = false;
+			this.dgvContract.AllowUserToDeleteRows = false;
+			this.dgvContract.AllowUserToResizeColumns = false;
+			this.dgvContract.AllowUserToResizeRows = false;
+			this.dgvContract.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvContract.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colContractType,
             this.colSendType,
@@ -67,14 +75,19 @@ namespace CIOFContractSample
             this.colProcessId,
             this.colProcessLocalId,
             this.colEventId,
-            this.colEventLocalId});
-			this.dataGridView1.Location = new System.Drawing.Point(24, 21);
-			this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-			this.dataGridView1.MultiSelect = false;
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.RowTemplate.Height = 27;
-			this.dataGridView1.Size = new System.Drawing.Size(924, 216);
-			this.dataGridView1.TabIndex = 0;
+            this.colEventLocalId,
+            this.colDataId,
+            this.colDataLocalId,
+            this.colStartDate,
+            this.colEndDate});
+			this.dgvContract.Location = new System.Drawing.Point(24, 21);
+			this.dgvContract.Margin = new System.Windows.Forms.Padding(2);
+			this.dgvContract.MultiSelect = false;
+			this.dgvContract.Name = "dgvContract";
+			this.dgvContract.RowHeadersVisible = false;
+			this.dgvContract.RowTemplate.Height = 27;
+			this.dgvContract.Size = new System.Drawing.Size(1238, 272);
+			this.dgvContract.TabIndex = 0;
 			// 
 			// colId
 			// 
@@ -166,26 +179,66 @@ namespace CIOFContractSample
 			this.colEventLocalId.ReadOnly = true;
 			this.colEventLocalId.Width = 95;
 			// 
+			// colDataId
+			// 
+			this.colDataId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
+			this.colDataId.DefaultCellStyle = dataGridViewCellStyle10;
+			this.colDataId.HeaderText = "DataId";
+			this.colDataId.Name = "colDataId";
+			this.colDataId.ReadOnly = true;
+			this.colDataId.Width = 63;
+			// 
+			// colDataLocalId
+			// 
+			this.colDataLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver;
+			this.colDataLocalId.DefaultCellStyle = dataGridViewCellStyle11;
+			this.colDataLocalId.HeaderText = "DataLocalId";
+			this.colDataLocalId.Name = "colDataLocalId";
+			this.colDataLocalId.ReadOnly = true;
+			this.colDataLocalId.Width = 90;
+			// 
+			// colStartDate
+			// 
+			this.colStartDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
+			this.colStartDate.DefaultCellStyle = dataGridViewCellStyle12;
+			this.colStartDate.HeaderText = "StartDate";
+			this.colStartDate.Name = "colStartDate";
+			this.colStartDate.ReadOnly = true;
+			this.colStartDate.Width = 79;
+			// 
+			// colEndDate
+			// 
+			this.colEndDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.Silver;
+			this.colEndDate.DefaultCellStyle = dataGridViewCellStyle13;
+			this.colEndDate.HeaderText = "EndDate";
+			this.colEndDate.Name = "colEndDate";
+			this.colEndDate.ReadOnly = true;
+			this.colEndDate.Width = 73;
+			// 
 			// ContractForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(990, 271);
-			this.Controls.Add(this.dataGridView1);
+			this.ClientSize = new System.Drawing.Size(1286, 304);
+			this.Controls.Add(this.dgvContract);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "ContractForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ContractForm";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dgvContract;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContractType;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colSendType;
@@ -195,5 +248,9 @@ namespace CIOFContractSample
 		private System.Windows.Forms.DataGridViewTextBoxColumn colProcessLocalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEventId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEventLocalId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colDataId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colDataLocalId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
 	}
 }

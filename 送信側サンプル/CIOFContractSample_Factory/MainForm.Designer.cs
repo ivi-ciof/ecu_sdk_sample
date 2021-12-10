@@ -38,27 +38,19 @@ namespace CIOFContractSample_Factory
 			this.nudPollingRate = new System.Windows.Forms.NumericUpDown();
 			this.btnStart = new System.Windows.Forms.Button();
 			this.btnShowContract = new System.Windows.Forms.Button();
-			this.gbox1th = new System.Windows.Forms.GroupBox();
 			this.rbtnRequest = new System.Windows.Forms.RadioButton();
-			this.gbox2th = new System.Windows.Forms.GroupBox();
-			this.gbox3th = new System.Windows.Forms.GroupBox();
 			this.btnShowCalendar = new System.Windows.Forms.Button();
 			this.btnSendData = new System.Windows.Forms.Button();
 			this.btnSendDeleteReq = new System.Windows.Forms.Button();
 			this.btnHistory = new System.Windows.Forms.Button();
-			this.btnDataImp = new System.Windows.Forms.Button();
+			this.btnDataList = new System.Windows.Forms.Button();
 			this.btnShowService = new System.Windows.Forms.Button();
-			this.gbox4th = new System.Windows.Forms.GroupBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvEnvironmentData = new System.Windows.Forms.DataGridView();
 			this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
-			this.gbox1th.SuspendLayout();
-			this.gbox2th.SuspendLayout();
-			this.gbox3th.SuspendLayout();
-			this.gbox4th.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEnvironmentData)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -66,7 +58,7 @@ namespace CIOFContractSample_Factory
 			// 
 			this.txtIP.Location = new System.Drawing.Point(151, 29);
 			this.txtIP.Name = "txtIP";
-			this.txtIP.Size = new System.Drawing.Size(174, 19);
+			this.txtIP.Size = new System.Drawing.Size(143, 19);
 			this.txtIP.TabIndex = 2;
 			this.txtIP.Text = "http://localhost:80";
 			// 
@@ -81,7 +73,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnInitialSetting
 			// 
-			this.btnInitialSetting.Location = new System.Drawing.Point(6, 18);
+			this.btnInitialSetting.Location = new System.Drawing.Point(318, 16);
 			this.btnInitialSetting.Name = "btnInitialSetting";
 			this.btnInitialSetting.Size = new System.Drawing.Size(115, 44);
 			this.btnInitialSetting.TabIndex = 0;
@@ -91,7 +83,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnStop
 			// 
-			this.btnStop.Location = new System.Drawing.Point(6, 18);
+			this.btnStop.Location = new System.Drawing.Point(318, 203);
 			this.btnStop.Name = "btnStop";
 			this.btnStop.Size = new System.Drawing.Size(115, 44);
 			this.btnStop.TabIndex = 0;
@@ -136,7 +128,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnStart
 			// 
-			this.btnStart.Location = new System.Drawing.Point(18, 43);
+			this.btnStart.Location = new System.Drawing.Point(449, 16);
 			this.btnStart.Margin = new System.Windows.Forms.Padding(2);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(115, 44);
@@ -147,7 +139,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnShowContract
 			// 
-			this.btnShowContract.Location = new System.Drawing.Point(9, 26);
+			this.btnShowContract.Location = new System.Drawing.Point(577, 79);
 			this.btnShowContract.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowContract.Name = "btnShowContract";
 			this.btnShowContract.Size = new System.Drawing.Size(115, 44);
@@ -156,22 +148,11 @@ namespace CIOFContractSample_Factory
 			this.btnShowContract.UseVisualStyleBackColor = true;
 			this.btnShowContract.Click += new System.EventHandler(this.btnShowContract_Click);
 			// 
-			// gbox1th
-			// 
-			this.gbox1th.Controls.Add(this.rbtnRequest);
-			this.gbox1th.Controls.Add(this.btnInitialSetting);
-			this.gbox1th.Location = new System.Drawing.Point(32, 104);
-			this.gbox1th.Name = "gbox1th";
-			this.gbox1th.Size = new System.Drawing.Size(531, 76);
-			this.gbox1th.TabIndex = 6;
-			this.gbox1th.TabStop = false;
-			this.gbox1th.Text = "1th  Step";
-			// 
 			// rbtnRequest
 			// 
 			this.rbtnRequest.AutoSize = true;
 			this.rbtnRequest.Checked = true;
-			this.rbtnRequest.Location = new System.Drawing.Point(158, 32);
+			this.rbtnRequest.Location = new System.Drawing.Point(32, 93);
 			this.rbtnRequest.Name = "rbtnRequest";
 			this.rbtnRequest.Size = new System.Drawing.Size(90, 16);
 			this.rbtnRequest.TabIndex = 2;
@@ -179,35 +160,9 @@ namespace CIOFContractSample_Factory
 			this.rbtnRequest.Text = "RequestSend";
 			this.rbtnRequest.UseVisualStyleBackColor = true;
 			// 
-			// gbox2th
-			// 
-			this.gbox2th.Controls.Add(this.btnStart);
-			this.gbox2th.Location = new System.Drawing.Point(32, 186);
-			this.gbox2th.Name = "gbox2th";
-			this.gbox2th.Size = new System.Drawing.Size(152, 119);
-			this.gbox2th.TabIndex = 7;
-			this.gbox2th.TabStop = false;
-			this.gbox2th.Text = "2th  Step";
-			// 
-			// gbox3th
-			// 
-			this.gbox3th.Controls.Add(this.btnShowCalendar);
-			this.gbox3th.Controls.Add(this.btnSendData);
-			this.gbox3th.Controls.Add(this.btnSendDeleteReq);
-			this.gbox3th.Controls.Add(this.btnHistory);
-			this.gbox3th.Controls.Add(this.btnDataImp);
-			this.gbox3th.Controls.Add(this.btnShowService);
-			this.gbox3th.Controls.Add(this.btnShowContract);
-			this.gbox3th.Location = new System.Drawing.Point(32, 311);
-			this.gbox3th.Name = "gbox3th";
-			this.gbox3th.Size = new System.Drawing.Size(531, 123);
-			this.gbox3th.TabIndex = 12;
-			this.gbox3th.TabStop = false;
-			this.gbox3th.Text = "3th Step";
-			// 
 			// btnShowCalendar
 			// 
-			this.btnShowCalendar.Location = new System.Drawing.Point(368, 27);
+			this.btnShowCalendar.Location = new System.Drawing.Point(701, 80);
 			this.btnShowCalendar.Name = "btnShowCalendar";
 			this.btnShowCalendar.Size = new System.Drawing.Size(114, 43);
 			this.btnShowCalendar.TabIndex = 6;
@@ -217,7 +172,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnSendData
 			// 
-			this.btnSendData.Location = new System.Drawing.Point(248, 26);
+			this.btnSendData.Location = new System.Drawing.Point(318, 144);
 			this.btnSendData.Name = "btnSendData";
 			this.btnSendData.Size = new System.Drawing.Size(114, 43);
 			this.btnSendData.TabIndex = 5;
@@ -227,7 +182,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnSendDeleteReq
 			// 
-			this.btnSendDeleteReq.Location = new System.Drawing.Point(128, 74);
+			this.btnSendDeleteReq.Location = new System.Drawing.Point(449, 143);
 			this.btnSendDeleteReq.Margin = new System.Windows.Forms.Padding(2);
 			this.btnSendDeleteReq.Name = "btnSendDeleteReq";
 			this.btnSendDeleteReq.Size = new System.Drawing.Size(115, 44);
@@ -238,7 +193,7 @@ namespace CIOFContractSample_Factory
 			// 
 			// btnHistory
 			// 
-			this.btnHistory.Location = new System.Drawing.Point(9, 74);
+			this.btnHistory.Location = new System.Drawing.Point(577, 143);
 			this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
 			this.btnHistory.Name = "btnHistory";
 			this.btnHistory.Size = new System.Drawing.Size(115, 44);
@@ -247,20 +202,20 @@ namespace CIOFContractSample_Factory
 			this.btnHistory.UseVisualStyleBackColor = true;
 			this.btnHistory.Click += new System.EventHandler(this.btnShowHistory_Click);
 			// 
-			// btnDataImp
+			// btnDataList
 			// 
-			this.btnDataImp.Location = new System.Drawing.Point(247, 74);
-			this.btnDataImp.Margin = new System.Windows.Forms.Padding(2);
-			this.btnDataImp.Name = "btnDataImp";
-			this.btnDataImp.Size = new System.Drawing.Size(115, 44);
-			this.btnDataImp.TabIndex = 2;
-			this.btnDataImp.Text = "Show DataImp";
-			this.btnDataImp.UseVisualStyleBackColor = true;
-			this.btnDataImp.Click += new System.EventHandler(this.btnDataImp_Click);
+			this.btnDataList.Location = new System.Drawing.Point(449, 79);
+			this.btnDataList.Margin = new System.Windows.Forms.Padding(2);
+			this.btnDataList.Name = "btnDataList";
+			this.btnDataList.Size = new System.Drawing.Size(115, 44);
+			this.btnDataList.TabIndex = 2;
+			this.btnDataList.Text = "Show Data List";
+			this.btnDataList.UseVisualStyleBackColor = true;
+			this.btnDataList.Click += new System.EventHandler(this.btnDataImp_Click);
 			// 
 			// btnShowService
 			// 
-			this.btnShowService.Location = new System.Drawing.Point(128, 26);
+			this.btnShowService.Location = new System.Drawing.Point(318, 79);
 			this.btnShowService.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowService.Name = "btnShowService";
 			this.btnShowService.Size = new System.Drawing.Size(115, 44);
@@ -268,16 +223,6 @@ namespace CIOFContractSample_Factory
 			this.btnShowService.Text = "Show Service";
 			this.btnShowService.UseVisualStyleBackColor = true;
 			this.btnShowService.Click += new System.EventHandler(this.btnShowService_Click);
-			// 
-			// gbox4th
-			// 
-			this.gbox4th.Controls.Add(this.btnStop);
-			this.gbox4th.Location = new System.Drawing.Point(32, 450);
-			this.gbox4th.Name = "gbox4th";
-			this.gbox4th.Size = new System.Drawing.Size(152, 77);
-			this.gbox4th.TabIndex = 13;
-			this.gbox4th.TabStop = false;
-			this.gbox4th.Text = "4th Step";
 			// 
 			// label1
 			// 
@@ -299,11 +244,11 @@ namespace CIOFContractSample_Factory
             this.Temperature,
             this.Humidity,
             this.TimeStamp});
-			this.dgvEnvironmentData.Location = new System.Drawing.Point(190, 188);
+			this.dgvEnvironmentData.Location = new System.Drawing.Point(28, 130);
 			this.dgvEnvironmentData.Name = "dgvEnvironmentData";
 			this.dgvEnvironmentData.RowHeadersVisible = false;
 			this.dgvEnvironmentData.RowTemplate.Height = 21;
-			this.dgvEnvironmentData.Size = new System.Drawing.Size(373, 117);
+			this.dgvEnvironmentData.Size = new System.Drawing.Size(266, 117);
 			this.dgvEnvironmentData.TabIndex = 14;
 			// 
 			// Temperature
@@ -328,13 +273,20 @@ namespace CIOFContractSample_Factory
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(575, 539);
+			this.ClientSize = new System.Drawing.Size(827, 272);
+			this.Controls.Add(this.btnStop);
+			this.Controls.Add(this.btnDataList);
+			this.Controls.Add(this.btnSendDeleteReq);
+			this.Controls.Add(this.btnShowCalendar);
+			this.Controls.Add(this.btnHistory);
+			this.Controls.Add(this.btnStart);
+			this.Controls.Add(this.btnSendData);
+			this.Controls.Add(this.rbtnRequest);
 			this.Controls.Add(this.dgvEnvironmentData);
+			this.Controls.Add(this.btnInitialSetting);
 			this.Controls.Add(this.label1);
-			this.Controls.Add(this.gbox4th);
-			this.Controls.Add(this.gbox3th);
-			this.Controls.Add(this.gbox2th);
-			this.Controls.Add(this.gbox1th);
+			this.Controls.Add(this.btnShowService);
+			this.Controls.Add(this.btnShowContract);
 			this.Controls.Add(this.nudPollingRate);
 			this.Controls.Add(this.lblSecond);
 			this.Controls.Add(this.lblPollingRate);
@@ -347,11 +299,6 @@ namespace CIOFContractSample_Factory
 			this.Text = "FactorySensorSide";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).EndInit();
-			this.gbox1th.ResumeLayout(false);
-			this.gbox1th.PerformLayout();
-			this.gbox2th.ResumeLayout(false);
-			this.gbox3th.ResumeLayout(false);
-			this.gbox4th.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgvEnvironmentData)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -369,13 +316,9 @@ namespace CIOFContractSample_Factory
 		private System.Windows.Forms.NumericUpDown nudPollingRate;
 		private System.Windows.Forms.Button btnStart;
 		private System.Windows.Forms.Button btnShowContract;
-        private System.Windows.Forms.GroupBox gbox1th;
-        private System.Windows.Forms.GroupBox gbox2th;
-        private System.Windows.Forms.GroupBox gbox3th;
         private System.Windows.Forms.Button btnShowService;
-        private System.Windows.Forms.GroupBox gbox4th;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnDataImp;
+        private System.Windows.Forms.Button btnDataList;
         private System.Windows.Forms.RadioButton rbtnRequest;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnSendDeleteReq;

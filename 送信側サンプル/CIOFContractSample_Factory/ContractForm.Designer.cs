@@ -29,14 +29,31 @@ namespace CIOFContractSample_Factory
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvContract = new System.Windows.Forms.DataGridView();
 			this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colContractType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.data_implementation_local_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.service_implementation_local_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.process_implementation_local_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colSendType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colServiceLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colProcessId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colProcessLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEventId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.event_implementation_local_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colEventLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colDataLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.EndTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
@@ -53,11 +70,15 @@ namespace CIOFContractSample_Factory
 			this.dgvContract.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colContractType,
-            this.data_implementation_local_id,
-            this.service_implementation_local_id,
-            this.process_implementation_local_id,
+            this.colSendType,
+            this.colServiceId,
+            this.colServiceLocalId,
+            this.colProcessId,
+            this.colProcessLocalId,
             this.colEventId,
-            this.event_implementation_local_id,
+            this.colEventLocalId,
+            this.colDataId,
+            this.colDataLocalId,
             this.StartTime,
             this.EndTime});
 			this.dgvContract.Location = new System.Drawing.Point(11, 11);
@@ -71,64 +92,131 @@ namespace CIOFContractSample_Factory
 			// colId
 			// 
 			this.colId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+			this.colId.DefaultCellStyle = dataGridViewCellStyle1;
 			this.colId.HeaderText = "Id";
 			this.colId.Name = "colId";
+			this.colId.ReadOnly = true;
 			this.colId.Width = 39;
 			// 
 			// colContractType
 			// 
 			this.colContractType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+			this.colContractType.DefaultCellStyle = dataGridViewCellStyle2;
 			this.colContractType.HeaderText = "ContractType";
 			this.colContractType.Name = "colContractType";
+			this.colContractType.ReadOnly = true;
 			this.colContractType.Width = 99;
 			// 
-			// data_implementation_local_id
+			// colSendType
 			// 
-			this.data_implementation_local_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.data_implementation_local_id.HeaderText = "data_implementation_local_id";
-			this.data_implementation_local_id.Name = "data_implementation_local_id";
-			this.data_implementation_local_id.Width = 174;
+			this.colSendType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+			this.colSendType.DefaultCellStyle = dataGridViewCellStyle3;
+			this.colSendType.HeaderText = "SendType";
+			this.colSendType.Name = "colSendType";
+			this.colSendType.ReadOnly = true;
+			this.colSendType.Width = 80;
 			// 
-			// service_implementation_local_id
+			// colServiceId
 			// 
-			this.service_implementation_local_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.service_implementation_local_id.HeaderText = "service_implementation_local_id";
-			this.service_implementation_local_id.Name = "service_implementation_local_id";
-			this.service_implementation_local_id.Width = 189;
+			this.colServiceId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
+			this.colServiceId.DefaultCellStyle = dataGridViewCellStyle4;
+			this.colServiceId.HeaderText = "ServiceId";
+			this.colServiceId.Name = "colServiceId";
+			this.colServiceId.ReadOnly = true;
+			this.colServiceId.Width = 77;
 			// 
-			// process_implementation_local_id
+			// colServiceLocalId
 			// 
-			this.process_implementation_local_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.process_implementation_local_id.HeaderText = "process_implementation_local_id";
-			this.process_implementation_local_id.Name = "process_implementation_local_id";
-			this.process_implementation_local_id.Width = 192;
+			this.colServiceLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
+			this.colServiceLocalId.DefaultCellStyle = dataGridViewCellStyle5;
+			this.colServiceLocalId.HeaderText = "ServiceLocalId";
+			this.colServiceLocalId.Name = "colServiceLocalId";
+			this.colServiceLocalId.ReadOnly = true;
+			this.colServiceLocalId.Width = 104;
+			// 
+			// colProcessId
+			// 
+			this.colProcessId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
+			this.colProcessId.DefaultCellStyle = dataGridViewCellStyle6;
+			this.colProcessId.HeaderText = "ProcessId";
+			this.colProcessId.Name = "colProcessId";
+			this.colProcessId.ReadOnly = true;
+			this.colProcessId.Width = 80;
+			// 
+			// colProcessLocalId
+			// 
+			this.colProcessLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+			this.colProcessLocalId.DefaultCellStyle = dataGridViewCellStyle7;
+			this.colProcessLocalId.HeaderText = "ProcessLocalId";
+			this.colProcessLocalId.Name = "colProcessLocalId";
+			this.colProcessLocalId.ReadOnly = true;
+			this.colProcessLocalId.Width = 107;
 			// 
 			// colEventId
 			// 
+			this.colEventId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
+			this.colEventId.DefaultCellStyle = dataGridViewCellStyle8;
 			this.colEventId.HeaderText = "EventId";
 			this.colEventId.Name = "colEventId";
 			this.colEventId.ReadOnly = true;
+			this.colEventId.Width = 68;
 			// 
-			// event_implementation_local_id
+			// colEventLocalId
 			// 
-			this.event_implementation_local_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.event_implementation_local_id.HeaderText = "event_implementation_local_id";
-			this.event_implementation_local_id.Name = "event_implementation_local_id";
-			this.event_implementation_local_id.ReadOnly = true;
-			this.event_implementation_local_id.Width = 180;
+			this.colEventLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
+			this.colEventLocalId.DefaultCellStyle = dataGridViewCellStyle9;
+			this.colEventLocalId.HeaderText = "EventLocalId";
+			this.colEventLocalId.Name = "colEventLocalId";
+			this.colEventLocalId.ReadOnly = true;
+			this.colEventLocalId.Width = 95;
+			// 
+			// colDataId
+			// 
+			this.colDataId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
+			this.colDataId.DefaultCellStyle = dataGridViewCellStyle10;
+			this.colDataId.HeaderText = "DataId";
+			this.colDataId.Name = "colDataId";
+			this.colDataId.ReadOnly = true;
+			this.colDataId.Width = 63;
+			// 
+			// colDataLocalId
+			// 
+			this.colDataLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver;
+			this.colDataLocalId.DefaultCellStyle = dataGridViewCellStyle11;
+			this.colDataLocalId.HeaderText = "DataLocalId";
+			this.colDataLocalId.Name = "colDataLocalId";
+			this.colDataLocalId.ReadOnly = true;
+			this.colDataLocalId.Width = 90;
 			// 
 			// StartTime
 			// 
 			this.StartTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
+			this.StartTime.DefaultCellStyle = dataGridViewCellStyle12;
 			this.StartTime.HeaderText = "StartTime";
 			this.StartTime.Name = "StartTime";
+			this.StartTime.ReadOnly = true;
 			this.StartTime.Width = 80;
 			// 
 			// EndTime
 			// 
 			this.EndTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			dataGridViewCellStyle13.BackColor = System.Drawing.Color.Silver;
+			this.EndTime.DefaultCellStyle = dataGridViewCellStyle13;
 			this.EndTime.HeaderText = "EndTime";
 			this.EndTime.Name = "EndTime";
+			this.EndTime.ReadOnly = true;
 			this.EndTime.Width = 74;
 			// 
 			// ContractForm
@@ -153,11 +241,15 @@ namespace CIOFContractSample_Factory
 		private System.Windows.Forms.DataGridView dgvContract;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContractType;
-		private System.Windows.Forms.DataGridViewTextBoxColumn data_implementation_local_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn service_implementation_local_id;
-		private System.Windows.Forms.DataGridViewTextBoxColumn process_implementation_local_id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colSendType;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceLocalId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colProcessId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colProcessLocalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEventId;
-		private System.Windows.Forms.DataGridViewTextBoxColumn event_implementation_local_id;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colEventLocalId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colDataId;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colDataLocalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn StartTime;
 		private System.Windows.Forms.DataGridViewTextBoxColumn EndTime;
 	}
