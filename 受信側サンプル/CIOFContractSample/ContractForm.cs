@@ -1,4 +1,5 @@
-﻿using CIOF_SDK.Model;
+﻿using CIOF_SDK;
+using CIOF_SDK.Model;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -6,21 +7,44 @@ namespace CIOFContractSample
 {
 	public partial class ContractForm : Form
 	{
+		/// <summary>
+		/// 契約情報
+		/// </summary>
+		private ContractRoot contract = null;
+
+		/// <summary>
+		/// コントローラモデル
+		/// </summary>
+		ControllerModel controllerModel = null;
 
 		public ContractForm()
 		{
 			InitializeComponent();
 		}
 
-		public ContractForm(ContractRoot contractRoot)
+		public ContractForm(ContractRoot contractRoot, ControllerModel controller)
 		{
 			InitializeComponent();
 
-			if (contractRoot != null
-				&& contractRoot.contracts != null
-				&& contractRoot.contracts.Any())
+			this.contract = contractRoot;
+			this.controllerModel = controller;
+			RefreshDGV();			
+		}
+
+		private void btnRefresh_Click(object sender, System.EventArgs e)
+		{
+			this.dgvContract.Rows.Clear();
+			this.contract = controllerModel.GetContract();
+			RefreshDGV();
+		}
+
+		private void RefreshDGV()
+		{
+			if (contract != null
+				&& contract.contracts != null
+				&& contract.contracts.Any())
 			{
-				foreach (var contractModel in contractRoot.contracts)
+				foreach (var contractModel in contract.contracts)
 				{
 					for (int i = 0; i < contractModel.event_implementations_id.Length; i++)
 					{
@@ -40,7 +64,7 @@ namespace CIOFContractSample
 					}
 
 				}
-			}			
+			}
 		}
 	}
 }

@@ -27,18 +27,6 @@ namespace CIOFContractSample_Factory
         }
 
         /// <summary>
-        /// EdgeControllerAPIKey.ymlのIDを設定しておきます。
-        /// </summary>
-        private readonly string CONTROLLER_ID = "PG63LCKQGV";
-
-        /// <summary>
-        /// サービス実装のローカルID
-        /// </summary>
-        private readonly string LOCAL_SERVICE_ID = "testserviceid01";
-
-        private readonly string LOCAL_PROCESS_ID = "6f56bafa-c922-4330-8b4f-cc999af7846d";
-
-        /// <summary>
         /// コントローラモデル
         /// </summary>
         ControllerModel controllerModel = null;
@@ -138,8 +126,8 @@ namespace CIOFContractSample_Factory
                         Tempareture = temp,
                         Humidity = hum,
                         MeasureDate = dateTime.ToString(),
-                        CreateRecodeUser = CONTROLLER_ID,
-                        UpdateRecodeUser = CONTROLLER_ID
+                        CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
+                        UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                     };
                     sensorDataModelList.Add(sensorData);
                 }
@@ -200,8 +188,8 @@ namespace CIOFContractSample_Factory
                     {
                         ContractID = targetContract.id,
                         ContractDataID = contractDataID,
-                        CreateRecodeUser = CONTROLLER_ID,
-                        UpdateRecodeUser = CONTROLLER_ID
+                        CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
+                        UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                     }
                     );
 
@@ -212,8 +200,8 @@ namespace CIOFContractSample_Factory
                         {
                             ContractDataID = contractDataID,
                             SensoreDataId = tempSensorData.id,
-                            CreateRecodeUser = CONTROLLER_ID,
-                            UpdateRecodeUser = CONTROLLER_ID
+                            CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
+                            UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                         });
                     }
 
@@ -241,10 +229,10 @@ namespace CIOFContractSample_Factory
             // 契約時メソッドの場合
 
             var requestServiceMethodListDict = new Dictionary<string, Action<string, string, string>>();
-            requestServiceMethodListDict.Add(LOCAL_SERVICE_ID, DataSendReqAction);
+            requestServiceMethodListDict.Add(Properties.Settings.Default.LOCAL_SERVICE_ID, DataSendReqAction);
 
             var processDict = new Dictionary<string, Action>();
-            processDict.Add(LOCAL_PROCESS_ID, CalendarEvent);
+            processDict.Add(Properties.Settings.Default.LOCAL_PROCESS_ID, CalendarEvent);
 
             // データ送信数：リクエストパラメータに含まれる件数を返す
             //dataCount = 1;
@@ -346,7 +334,7 @@ namespace CIOFContractSample_Factory
 
                 if (targetMap != null)
                 {
-                    controllerModel.PostRequestParameterByServiceId(LOCAL_SERVICE_ID, "delete", "From= 2021/1/1,To = 2021/12/31", targetMap.ContractDataID);
+                    controllerModel.PostRequestParameterByServiceId(Properties.Settings.Default.LOCAL_SERVICE_ID, "delete", "From= 2021/1/1,To = 2021/12/31", targetMap.ContractDataID);
 
                     // 削除要求したのでいずれ相手側のコントローラで削除を実行するはずな為、対象データの削除フラグを立てる
                     // →TODO データの取り扱いどうすべきか各コントローラで検討した方が良い
@@ -387,7 +375,7 @@ namespace CIOFContractSample_Factory
 		private void btnSendData_Click(object sender, EventArgs e)
 		{
             // サービスIDから契約IDを取得
-            var contractIdList = controllerModel.ContractRoot.contracts.Where(item => item.service_implementation_local_id == LOCAL_SERVICE_ID).ToList();
+            var contractIdList = controllerModel.ContractRoot.contracts.Where(item => item.service_implementation_local_id == Properties.Settings.Default.LOCAL_SERVICE_ID).ToList();
             foreach (var contractId in contractIdList)
 			{
                 this.DataSendAction(contractId.id, null);
@@ -396,8 +384,13 @@ namespace CIOFContractSample_Factory
 
         private void CalendarEvent()
 		{
-            OutputLogger.WriteDebugLog("calendarEvent");
-		}
+            // サービスIDから契約IDを取得
+            var contractIdList = controllerModel.ContractRoot.contracts.Where(item => item.service_implementation_local_id == Properties.Settings.Default.LOCAL_SERVICE_ID).ToList();
+            foreach (var contractId in contractIdList)
+            {
+                this.DataSendAction(contractId.id, null);
+            }
+        }
 
 		private void btnShowCalendar_Click(object sender, EventArgs e)
 		{

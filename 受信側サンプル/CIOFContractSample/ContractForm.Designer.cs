@@ -56,6 +56,7 @@ namespace CIOFContractSample
 			this.colDataLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colStartDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEndDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnRefresh = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvContract)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -80,7 +81,7 @@ namespace CIOFContractSample
             this.colDataLocalId,
             this.colStartDate,
             this.colEndDate});
-			this.dgvContract.Location = new System.Drawing.Point(24, 21);
+			this.dgvContract.Location = new System.Drawing.Point(24, 73);
 			this.dgvContract.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvContract.MultiSelect = false;
 			this.dgvContract.Name = "dgvContract";
@@ -219,16 +220,28 @@ namespace CIOFContractSample
 			this.colEndDate.ReadOnly = true;
 			this.colEndDate.Width = 73;
 			// 
+			// btnRefresh
+			// 
+			this.btnRefresh.Location = new System.Drawing.Point(24, 21);
+			this.btnRefresh.Name = "btnRefresh";
+			this.btnRefresh.Size = new System.Drawing.Size(117, 37);
+			this.btnRefresh.TabIndex = 1;
+			this.btnRefresh.Text = "refresh";
+			this.btnRefresh.UseVisualStyleBackColor = true;
+			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+			// 
 			// ContractForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1286, 304);
+			this.ClientSize = new System.Drawing.Size(1286, 367);
+			this.Controls.Add(this.btnRefresh);
 			this.Controls.Add(this.dgvContract);
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "ContractForm";
+			this.ShowIcon = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ContractForm";
 			((System.ComponentModel.ISupportInitialize)(this.dgvContract)).EndInit();
@@ -252,5 +265,6 @@ namespace CIOFContractSample
 		private System.Windows.Forms.DataGridViewTextBoxColumn colDataLocalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colStartDate;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEndDate;
+		private System.Windows.Forms.Button btnRefresh;
 	}
 }

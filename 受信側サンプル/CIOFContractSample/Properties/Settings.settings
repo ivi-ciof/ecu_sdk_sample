@@ -14,5 +14,8 @@
     <Setting Name="LOCAL_DELETE_SERVICE_ID" Type="System.String" Scope="User">
       <Value Profile="(Default)">local_delete_service_id</Value>
     </Setting>
+    <Setting Name="CALENDAR_EVENT_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">R5VWMHXL79</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

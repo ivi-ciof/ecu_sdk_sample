@@ -70,5 +70,17 @@ namespace CIOFContractSample.Properties {
                 this["LOCAL_DELETE_SERVICE_ID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("R5VWMHXL79")]
+        public string CALENDAR_EVENT_ID {
+            get {
+                return ((string)(this["CALENDAR_EVENT_ID"]));
+            }
+            set {
+                this["CALENDAR_EVENT_ID"] = value;
+            }
+        }
     }
 }

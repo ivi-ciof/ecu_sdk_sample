@@ -82,17 +82,18 @@ namespace CIOFContractSample
 				return;
 			}
 			
-
+			// サービス実装の登録
 			var serviceImplementsMethodListDict = new Dictionary<string, Action<string, List<Dictionary<string, object>>>>();
 			serviceImplementsMethodListDict.Add(LOCAL_SERVICE_ID, StoreEnvironmentData);
 
+			// リクエストによって実行するサービス実装の登録
 			Dictionary<string, Action<string, string, string, string>> requestMethodDict = new Dictionary<string, Action<string, string, string, string>>();
 			requestMethodDict.Add(LOCAL_SERVICE_ID, GetRequest);
-
 			controllerModel.SetServiceMethod(serviceImplementsMethodListDict, null, requestMethodDict);
 
+			// カレンダーイベントによって実行するプロセス実装の登録
 			Dictionary<string, Action> calendarProcessDict = new Dictionary<string, Action>();
-			calendarProcessDict.Add("R5VWMHXL79", CalendarEvent);
+			calendarProcessDict.Add(Properties.Settings.Default.CALENDAR_EVENT_ID, CalendarEvent);
 			controllerModel.SetProcessMethod(calendarProcessDict);
 
 			if (rbtnDB.Checked)
@@ -160,7 +161,7 @@ namespace CIOFContractSample
 		/// <param name="e"></param>
 		private void btnShowContract_Click(object sender, EventArgs e)
 		{
-			using (var frm = new ContractForm(controllerModel.ContractRoot))
+			using (var frm = new ContractForm(controllerModel.ContractRoot, controllerModel))
 			{
 				frm.ShowDialog();
 			}

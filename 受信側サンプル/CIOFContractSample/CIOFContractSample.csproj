@@ -109,6 +109,12 @@
     <Compile Include="EnvironmentDataForm.Designer.cs">
       <DependentUpon>EnvironmentDataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryListForm.Designer.cs">
+      <DependentUpon>HistoryListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EnvironmentDataForm.resx">
       <DependentUpon>EnvironmentDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryListForm.resx">
+      <DependentUpon>HistoryListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

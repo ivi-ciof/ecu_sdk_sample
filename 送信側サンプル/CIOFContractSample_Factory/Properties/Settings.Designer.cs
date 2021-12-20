@@ -22,5 +22,38 @@ namespace CIOFContractSample_Factory.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PG63LCKQGV")]
+        public string CONTROLLER_ID {
+            get {
+                return ((string)(this["CONTROLLER_ID"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("testserviceid01")]
+        public string LOCAL_SERVICE_ID {
+            get {
+                return ((string)(this["LOCAL_SERVICE_ID"]));
+            }
+            set {
+                this["LOCAL_SERVICE_ID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6f56bafa-c922-4330-8b4f-cc999af7846d")]
+        public string LOCAL_PROCESS_ID {
+            get {
+                return ((string)(this["LOCAL_PROCESS_ID"]));
+            }
+            set {
+                this["LOCAL_PROCESS_ID"] = value;
+            }
+        }
     }
 }
