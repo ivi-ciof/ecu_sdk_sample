@@ -26,6 +26,11 @@ namespace CIOFContractSample
 		List<DataRecord> dataRecordList = null;
 
 		/// <summary>
+		/// 削除データリスト
+		/// </summary>
+		List<DataRecord> deleteDataList = null;
+
+		/// <summary>
 		/// 取引データリスト
 		/// </summary>
 		List<TradeDataRecord> tradeDataRecordList = null;
@@ -68,22 +73,19 @@ namespace CIOFContractSample
 			var currentDirectory = Directory.GetCurrentDirectory();
 			var servicePath = Path.Combine(currentDirectory, "serviceimplement.json");
 			var dataPath = Path.Combine(currentDirectory, "dataimplement.json");
-
 			if (string.IsNullOrEmpty(this.txtAddress.Text))
 			{
 				MessageBox.Show("アドレスが空です。");
 				return;
 			}
-
 			Uri outUri;
 			if (!Uri.TryCreate(this.txtAddress.Text, UriKind.Absolute, out outUri))
 			{
 				MessageBox.Show("アドレスが不正です。");
 				return;
-			}
-			
+			}			
 			// サービス実装の登録
-			var serviceImplementsMethodListDict = new Dictionary<string, Action<string, List<Dictionary<string, object>>>>();
+			var serviceImplementsMethodListDict = new Dictionary<string, Action<string, Dictionary<string, List<Dictionary<string, object>>>>>();
 			serviceImplementsMethodListDict.Add(LOCAL_SERVICE_ID, StoreEnvironmentData);
 
 			// リクエストによって実行するサービス実装の登録
@@ -98,19 +100,18 @@ namespace CIOFContractSample
 
 			if (rbtnDB.Checked)
 			{
-				controllerModel.SetDataMethod(SaveDataToDB, GetDataId, null);
+				controllerModel.SetDataMethod(SaveDataToDB, GetDataId);
 				this.dataRecordList = GetDataRecordList();
 				this.tradeDataRecordList = new List<TradeDataRecord>();
 			}
 			else
 			{
 				this.dataRecordList = GetDataRecordListFromFile();
-				controllerModel.SetDataMethod(SaveDataToFile, GetDataId, null);
+				controllerModel.SetDataMethod(SaveDataToFile, GetDataId);
 				this.tradeDataRecordList = new List<TradeDataRecord>();
 			}
 
 			controllerModel.InitialSetting(this.txtAddress.Text, (int)this.nudPollingRate.Value, servicePath, dataPath);
-
 			MessageBox.Show("初期設定を行いました。");
 		}
 
@@ -187,19 +188,21 @@ namespace CIOFContractSample
 		/// <param name="dataId">データID</param>
 		public void GetRequest(string condition, string responseLimit, string dataId, string tradeContactId)
 		{
-			// 削除処理実装予定
+			// 削除対象リストに詰める
 			if (!string.IsNullOrEmpty(dataId))
 			{
 				using (var context = new SampleDBContext())
 				{
+					if (deleteDataList == null)
+					{
+						deleteDataList = new List<DataRecord>();
+					}
 					var deleteTargetDataList = context.DataRecords.Where(item => item.DataId == dataId).ToList();
 
 					foreach (var deleteTarget in deleteTargetDataList)
 					{
-						deleteTarget.DeleteFlg = true;
+						deleteDataList.Add(deleteTarget);
 					}			
-
-					context.SaveChanges();
 				}
 
 				controllerModel.PostServiceRecordByDataId(dataId, EventTypeConst.DELETE, "データを削除しました。");
@@ -211,42 +214,42 @@ namespace CIOFContractSample
 		/// </summary>
 		/// <param name="tradeId">取引ID</param>
 		/// <param name="contentList">データリスト</param>
-		public void StoreEnvironmentData(string tradeId, List<Dictionary<string, object>> contentList)
+		public void StoreEnvironmentData(string tradeId, Dictionary<string, List<Dictionary<string, object>>> contentDict)
 		{
 			OutputLogger.WriteDebugLog("calendar");
 			if (tradeId == null) return;
 			var tradeInfo = controllerModel.TradeDataRoot.trade_datas.Where(item => item.trade_contract_id == tradeId).FirstOrDefault();
 
-			var dataId = string.Empty;
-			if (tradeInfo != null)
+			foreach (var dict in contentDict)
 			{
-				dataId = tradeInfo.id;
-			}
+				var dataId = dict.Key;
 
-			foreach (var dict in contentList)
-			{
-				var tradeDataInfo = new TradeDataRecord();
-
-				tradeDataInfo.TradeContractId = tradeInfo.id;
-				tradeDataInfo.DataId = dataId;
-				this.tradeDataRecordList.Add(tradeDataInfo);
-				var dataRecordInfo = new DataRecord();
-				dataRecordInfo.DataId = dataId;
-				if (dict.ContainsKey("温度"))
+				foreach (var contentInfo in dict.Value)
 				{
-					dataRecordInfo.Temperature = (double)dict["温度"];
+					var tradeDataInfo = new TradeDataRecord();
+
+					tradeDataInfo.TradeContractId = tradeInfo.id;
+					tradeDataInfo.DataId = dataId;
+					this.tradeDataRecordList.Add(tradeDataInfo);
+					var dataRecordInfo = new DataRecord();
+					dataRecordInfo.DataId = dataId;
+					if (contentInfo.ContainsKey(("温度")))
+					{
+						dataRecordInfo.Temperature = (double)contentInfo["温度"];
+					}
+					if (contentInfo.ContainsKey("湿度"))
+					{
+						dataRecordInfo.Humidity = (double)contentInfo["湿度"];
+					}
+					if (contentInfo.ContainsKey("計測日時"))
+					{
+						dataRecordInfo.TimeStamp = ((DateTime)contentInfo["計測日時"]).ToShortDateString();
+					}
+
+
+					this.dataRecordList.Add(dataRecordInfo);
 				}
-				if (dict.ContainsKey("湿度"))
-				{
-					dataRecordInfo.Humidity = (double)dict["湿度"];
-				}
-				if (dict.ContainsKey("計測日時"))
-				{
-					dataRecordInfo.TimeStamp = ((DateTime)dict["計測日時"]).ToShortDateString();
-				}				
-				
 
-				this.dataRecordList.Add(dataRecordInfo);
 			}
 		}
 
@@ -413,6 +416,19 @@ namespace CIOFContractSample
 		private void CalendarEvent()
 		{
 			OutputLogger.WriteDebugLog("calendar event");
+		}
+
+		private void btnShowHIstory_Click(object sender, EventArgs e)
+		{
+			using (var frm = new HistoryListForm(this.controllerModel))
+			{
+				frm.ShowDialog();
+			}
+		}
+
+		private void btnDeleteData_Click(object sender, EventArgs e)
+		{
+
 		}
 	}	
 }

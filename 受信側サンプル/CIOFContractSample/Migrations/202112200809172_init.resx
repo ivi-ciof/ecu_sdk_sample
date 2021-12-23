@@ -117,34 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="colContractId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colContractDataID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colCreateRecordTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colContractDataID2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colSensorDataID2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colCreateRecordTime2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colSensorDataId3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colTemperature.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colHumidity.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="colMeasureDate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="Target" xml:space="preserve">
+    <value>H4sIAAAAAAAEAO1bS3LjNhDdpyp3YHE9I/qzSRxppmzLSlTxL6Y9q2wgsiWzAoIsAnRZZ8siR8oV0uCfICmJNKWMZ1jemAD6obuB1yCarX///mf8+dWl2gsE3PHYRD8eHekaMMuzHbaa6KFYfvxJ//zpxx/GV7b7qn1Jx53KcSjJ+ER/FsI/MwxuPYNL+Mh1rMDj3lKMLM81iO0ZJ0dHPxvHxwYghI5YmjZ+CJlwXIge8PHSYxb4IiT0xrOB8qQde8wIVbslLnCfWDDRL+d3MxwvAmIJk7g+hVEspGvn1CGokAl0qWuEMU8QgeqePXEwReCxleljA6GPax9w3JJQDokZZ/nwXS06OpEWGblgCmWFXHhuS8Dj08RFhireydF65kJ04hU6W6yl1ZEj0YeJ/6ZEkBviR/7TNXXis0saSKENPh/VIX3QquM/ZHsHt5j8w0EhFWEAEwYhDkSp+3BBHet3WD96fwGbsJDSohloCPaVGrDpPvB8CMT6AZaJcY6ta0ZZzlAFM7GCTGzqnInTE127xcnJgkK2SwpuMYUXwK/AICAC7HsiBAS4yHMbIj9XZlfmSh0zn6Zz4uZEuunaDXm9BrYSzxMd/9W1mfMKdtqS6PHEHGQnCokghF2nkqtziOkCQI88gJRAzgUHnfAR40k6IdqbPFfWcTPgk28f1oJ8wsDuxYIpUBAwo6sU6cLzKBC2BWhs5EFi59BhAuNe0G8QqWIO4eRr4ni8PhDNttXKIVx87+FC7pNY3W6hIZf/n8PAvEMY2E6Q/sJAmZB724CP4PpSQ3Rxtvc89HD7nfdb6Dp2ZNibYOSuNwXuhuHtZghXbw5XjwGx4a0xSwEZAtdmAktvZXei/UewAwXKIVp8o9FCblXi4G5PX4gjQk8vZDu8ipqQgc5LogZPHFHWOsY1QdRnZ7iu5frE2a3atEvFG5twS9esbTPU3fO2zJWHvzrwYoTdAqQE0zq0StCuW8xs2fLcohEnF9MkpNGQhRyj0T7u+EJWMmnRzCQl+dFsn6RzYwzD4jW5ukzbbCYMsmQFSq9cUxtmTsCjdVoQuZUvbbcyTN2kDT5PZ2vYh+phk69EKij/T4RbpQxV6NzHMzTbxZMk8gBkmjbkMCswUQqZUBLU3NAvPRq6rOmWv0m6mMIrohTb26OlN/g6xLSvBWrlACrhVnq7IcdxuQk57t0duXrkFJGrvV2Q07OlHjnt3R25cMgUIQvNVayxoexulVlGhVrKG5xK2daEVg6A/qldc2i8jeS7AO6X7v0SVMmkFUGVroH0A+k7k7747tQPywuvWu0ZvUm4ydsqPdpxoo5g7ZlVSnwVoUodu+Pl6a8iWN7aQrM8A1bSK28e4scQPzrHj8oFrJ8gol7a2keSrQj7CSeVfFWJdGrnocPUQODvlMCVPIc6JJs9y3coeY1xkmPYoQRLTTrEQ3QNnfTi2FHCYc0FuNGrwsj849oRkPfeEOYsgYs4r63jIhCNe2GA0KPRnwJ7RvbiF6Wc6+sprTI4t2mH+qqD1x44TOja1ux824/2leol9kIC65kE1YxwDt29WKk39IZ8/D7wi8lrGWJEn+n3vhRuyrZ3VriSbV844kBVR98WtfZDgNrCnciOnsp2Bia9ByY1vTAf4mPyXlhT3tB9rWlNncuSeqQ9W9Qyl24olSqX4VgcyLzlCvxuGd1QEdLXCu8nYAxEendEUis5qt/SW9VpJIURO9ZqxFdmdMfCQ3tiC5SR3Qs6dlGlTmCbUiWZFjUgW0pA6qbtXiKyS4VI3Yx9lZFU0yhjo/h7t/EUuLPKIeSv3xhYMh+Rg6Zj5mzppTxAi4sapUMUmtyAIDKlch4IZ4nrht0WcB6VbH0hNMQhV+4C7Dm7C4UfinPOwV3Q0ieHsbF5/qhWpqzz+M6XT7wPE1BNR4aJO3YROtTO9J7VMLwBQnI5OZJQK1PIo2m1zpBuPbYjUOK+KfjA5IEmXwwpgvE7ZpIX6KIbRttrWBFrnSbEmkG2L0TZ7eOpQ1YBcXmCkcvjI+5h23399B+K3+LI9jkAAA==</value>
+  </data>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
+  </data>
 </root>

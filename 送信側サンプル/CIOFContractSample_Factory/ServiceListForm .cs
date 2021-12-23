@@ -278,7 +278,7 @@ namespace CIOFContractSample_Factory
 		private void btnExportJson_Click(object sender, System.EventArgs e)
 		{
             var filePath = FileUtil.ShowSaveFileDialog(string.Empty, "JSONファイル(*.json) | *.json");
-            FileUtil.SaveJsonFileBySpecifiedFineName<ServiceImplementationsRoot>(this.serviceList, @filePath);
+            FileUtil.SaveJsonFileBySpecifiedFileName<ServiceImplementationsRoot>(this.serviceList, @filePath);
             MessageBox.Show("jsonファイルを出力しました。");
         }
 	}

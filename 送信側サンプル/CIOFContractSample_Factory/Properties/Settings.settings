@@ -6,7 +6,7 @@
       <Value Profile="(Default)">PG63LCKQGV</Value>
     </Setting>
     <Setting Name="LOCAL_SERVICE_ID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">testserviceid01</Value>
+      <Value Profile="(Default)">servicelocalid12</Value>
     </Setting>
     <Setting Name="LOCAL_PROCESS_ID" Type="System.String" Scope="User">
       <Value Profile="(Default)">6f56bafa-c922-4330-8b4f-cc999af7846d</Value>

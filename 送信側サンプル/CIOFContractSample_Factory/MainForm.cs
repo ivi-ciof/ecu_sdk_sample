@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CIOFContractSample_Factory
@@ -173,9 +174,9 @@ namespace CIOFContractSample_Factory
                     foreach (var data in targetSensorDataList)
                     {
                         var retDic = CIOF_SDK.Util.TypeUtil.CreateSendData();
-                        retDic.Add("温度", data.Tempareture);
-                        retDic.Add("湿度", data.Humidity);
-                        retDic.Add("計測日時", Convert.ToDateTime(data.MeasureDate));
+                        retDic.Add("Temperature", data.Tempareture);
+                        retDic.Add("Humidity", data.Humidity);
+                        retDic.Add("Time stamp", Convert.ToDateTime(data.MeasureDate));
 
                         sendContentsList.Add(retDic);
                     }
@@ -236,7 +237,7 @@ namespace CIOFContractSample_Factory
 
             // データ送信数：リクエストパラメータに含まれる件数を返す
             //dataCount = 1;
-            controllerModel.SetServiceMethod(new Dictionary<string, Action<string, List<Dictionary<string, object>>>>(),
+            controllerModel.SetServiceMethod(new Dictionary<string, Action<string, Dictionary<string, List<Dictionary<string, object>>>>>(),
                                     requestServiceMethodListDict,
                                     new Dictionary<string, Action<string, string, string, string>>());
 
@@ -382,15 +383,20 @@ namespace CIOFContractSample_Factory
             }            
 		}
 
+
         private void CalendarEvent()
 		{
-            // サービスIDから契約IDを取得
-            var contractIdList = controllerModel.ContractRoot.contracts.Where(item => item.service_implementation_local_id == Properties.Settings.Default.LOCAL_SERVICE_ID).ToList();
-            foreach (var contractId in contractIdList)
-            {
-                this.DataSendAction(contractId.id, null);
-            }
+            //using (var frm = new MessageForm())
+            //{
+            //    frm.ShowDialog();
+            //    Thread.Sleep(3000); 
+            //    frm.Close();
+            //}
         }
+
+        // イベントに対応するプロセス実行
+        // ”カレンダー１によって実行されました”というポップアップ表示
+
 
 		private void btnShowCalendar_Click(object sender, EventArgs e)
 		{
@@ -400,7 +406,7 @@ namespace CIOFContractSample_Factory
             }
         }
 
-		private void btnSendRequest_Click(object sender, EventArgs e)
+		private void btnExecuteEvent_Click(object sender, EventArgs e)
 		{
 
 		}

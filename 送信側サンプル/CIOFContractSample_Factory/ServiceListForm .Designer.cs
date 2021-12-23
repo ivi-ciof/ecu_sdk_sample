@@ -30,19 +30,10 @@ namespace CIOFContractSample_Factory
 		private void InitializeComponent()
 		{
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvService = new System.Windows.Forms.DataGridView();
+			this.btnRefresh = new System.Windows.Forms.Button();
+			this.btnUpdate = new System.Windows.Forms.Button();
+			this.btnExportJson = new System.Windows.Forms.Button();
 			this.colServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colServiceLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +47,6 @@ namespace CIOFContractSample_Factory
 			this.colEventName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEventDescripton = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colSetting = new System.Windows.Forms.DataGridViewButtonColumn();
-			this.btnRefresh = new System.Windows.Forms.Button();
-			this.btnUpdate = new System.Windows.Forms.Button();
-			this.btnExportJson = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -66,6 +54,10 @@ namespace CIOFContractSample_Factory
 			// 
 			this.dgvService.AllowUserToAddRows = false;
 			this.dgvService.AllowUserToDeleteRows = false;
+			this.dgvService.AllowUserToResizeColumns = false;
+			this.dgvService.AllowUserToResizeRows = false;
+			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.dgvService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this.dgvService.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -91,136 +83,6 @@ namespace CIOFContractSample_Factory
 			this.dgvService.Size = new System.Drawing.Size(1266, 182);
 			this.dgvService.TabIndex = 0;
 			this.dgvService.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvService_CellContentClick);
-			// 
-			// colServiceId
-			// 
-			this.colServiceId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-			this.colServiceId.DefaultCellStyle = dataGridViewCellStyle1;
-			this.colServiceId.HeaderText = "ServiceId";
-			this.colServiceId.Name = "colServiceId";
-			this.colServiceId.ReadOnly = true;
-			this.colServiceId.Width = 77;
-			// 
-			// colServiceLocalId
-			// 
-			this.colServiceLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-			this.colServiceLocalId.DefaultCellStyle = dataGridViewCellStyle2;
-			this.colServiceLocalId.HeaderText = "ServiceLocalId";
-			this.colServiceLocalId.Name = "colServiceLocalId";
-			this.colServiceLocalId.ReadOnly = true;
-			this.colServiceLocalId.Width = 104;
-			// 
-			// colServiceName
-			// 
-			this.colServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-			this.colServiceName.DefaultCellStyle = dataGridViewCellStyle3;
-			this.colServiceName.HeaderText = "ServiceName";
-			this.colServiceName.Name = "colServiceName";
-			this.colServiceName.ReadOnly = true;
-			this.colServiceName.Width = 97;
-			// 
-			// colServiceDescription
-			// 
-			this.colServiceDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle4.BackColor = System.Drawing.Color.Silver;
-			this.colServiceDescription.DefaultCellStyle = dataGridViewCellStyle4;
-			this.colServiceDescription.HeaderText = "ServiceDescription";
-			this.colServiceDescription.Name = "colServiceDescription";
-			this.colServiceDescription.ReadOnly = true;
-			this.colServiceDescription.Width = 126;
-			// 
-			// colProcessId
-			// 
-			this.colProcessId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle5.BackColor = System.Drawing.Color.Silver;
-			this.colProcessId.DefaultCellStyle = dataGridViewCellStyle5;
-			this.colProcessId.HeaderText = "ProcessId";
-			this.colProcessId.Name = "colProcessId";
-			this.colProcessId.ReadOnly = true;
-			this.colProcessId.Width = 80;
-			// 
-			// colProcessLocalId
-			// 
-			this.colProcessLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-			this.colProcessLocalId.DefaultCellStyle = dataGridViewCellStyle6;
-			this.colProcessLocalId.HeaderText = "ProcessLocalId";
-			this.colProcessLocalId.Name = "colProcessLocalId";
-			this.colProcessLocalId.ReadOnly = true;
-			this.colProcessLocalId.Width = 107;
-			// 
-			// colProcessName
-			// 
-			this.colProcessName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-			this.colProcessName.DefaultCellStyle = dataGridViewCellStyle7;
-			this.colProcessName.HeaderText = "ProcessName";
-			this.colProcessName.Name = "colProcessName";
-			this.colProcessName.ReadOnly = true;
-			// 
-			// colProcessDescription
-			// 
-			this.colProcessDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle8.BackColor = System.Drawing.Color.Silver;
-			this.colProcessDescription.DefaultCellStyle = dataGridViewCellStyle8;
-			this.colProcessDescription.HeaderText = "ProcessDescription";
-			this.colProcessDescription.Name = "colProcessDescription";
-			this.colProcessDescription.ReadOnly = true;
-			this.colProcessDescription.Width = 129;
-			// 
-			// colEventId
-			// 
-			this.colEventId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle9.BackColor = System.Drawing.Color.Silver;
-			this.colEventId.DefaultCellStyle = dataGridViewCellStyle9;
-			this.colEventId.HeaderText = "EventId";
-			this.colEventId.Name = "colEventId";
-			this.colEventId.ReadOnly = true;
-			this.colEventId.Width = 68;
-			// 
-			// colEventLocalId
-			// 
-			this.colEventLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle10.BackColor = System.Drawing.Color.Silver;
-			this.colEventLocalId.DefaultCellStyle = dataGridViewCellStyle10;
-			this.colEventLocalId.HeaderText = "EventLocalId";
-			this.colEventLocalId.Name = "colEventLocalId";
-			this.colEventLocalId.ReadOnly = true;
-			this.colEventLocalId.Width = 95;
-			// 
-			// colEventName
-			// 
-			this.colEventName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle11.BackColor = System.Drawing.Color.Silver;
-			this.colEventName.DefaultCellStyle = dataGridViewCellStyle11;
-			this.colEventName.HeaderText = "EventName";
-			this.colEventName.Name = "colEventName";
-			this.colEventName.ReadOnly = true;
-			this.colEventName.Width = 88;
-			// 
-			// colEventDescripton
-			// 
-			this.colEventDescripton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle12.BackColor = System.Drawing.Color.Silver;
-			this.colEventDescripton.DefaultCellStyle = dataGridViewCellStyle12;
-			this.colEventDescripton.HeaderText = "EventDescription";
-			this.colEventDescripton.Name = "colEventDescripton";
-			this.colEventDescripton.ReadOnly = true;
-			this.colEventDescripton.Width = 117;
-			// 
-			// colSetting
-			// 
-			this.colSetting.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-			dataGridViewCellStyle13.BackColor = System.Drawing.Color.Silver;
-			this.colSetting.DefaultCellStyle = dataGridViewCellStyle13;
-			this.colSetting.HeaderText = "Setting";
-			this.colSetting.Name = "colSetting";
-			this.colSetting.ReadOnly = true;
-			this.colSetting.Width = 47;
 			// 
 			// btnRefresh
 			// 
@@ -252,6 +114,109 @@ namespace CIOFContractSample_Factory
 			this.btnExportJson.UseVisualStyleBackColor = true;
 			this.btnExportJson.Click += new System.EventHandler(this.btnExportJson_Click);
 			// 
+			// colServiceId
+			// 
+			this.colServiceId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colServiceId.HeaderText = "ServiceId";
+			this.colServiceId.Name = "colServiceId";
+			this.colServiceId.ReadOnly = true;
+			this.colServiceId.Width = 77;
+			// 
+			// colServiceLocalId
+			// 
+			this.colServiceLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colServiceLocalId.HeaderText = "ServiceLocalId";
+			this.colServiceLocalId.Name = "colServiceLocalId";
+			this.colServiceLocalId.ReadOnly = true;
+			this.colServiceLocalId.Width = 104;
+			// 
+			// colServiceName
+			// 
+			this.colServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colServiceName.HeaderText = "ServiceName";
+			this.colServiceName.Name = "colServiceName";
+			this.colServiceName.ReadOnly = true;
+			this.colServiceName.Width = 97;
+			// 
+			// colServiceDescription
+			// 
+			this.colServiceDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colServiceDescription.HeaderText = "ServiceDescription";
+			this.colServiceDescription.Name = "colServiceDescription";
+			this.colServiceDescription.ReadOnly = true;
+			this.colServiceDescription.Width = 126;
+			// 
+			// colProcessId
+			// 
+			this.colProcessId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colProcessId.HeaderText = "ProcessId";
+			this.colProcessId.Name = "colProcessId";
+			this.colProcessId.ReadOnly = true;
+			this.colProcessId.Width = 80;
+			// 
+			// colProcessLocalId
+			// 
+			this.colProcessLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colProcessLocalId.HeaderText = "ProcessLocalId";
+			this.colProcessLocalId.Name = "colProcessLocalId";
+			this.colProcessLocalId.ReadOnly = true;
+			this.colProcessLocalId.Width = 107;
+			// 
+			// colProcessName
+			// 
+			this.colProcessName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colProcessName.HeaderText = "ProcessName";
+			this.colProcessName.Name = "colProcessName";
+			this.colProcessName.ReadOnly = true;
+			// 
+			// colProcessDescription
+			// 
+			this.colProcessDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colProcessDescription.HeaderText = "ProcessDescription";
+			this.colProcessDescription.Name = "colProcessDescription";
+			this.colProcessDescription.ReadOnly = true;
+			this.colProcessDescription.Width = 129;
+			// 
+			// colEventId
+			// 
+			this.colEventId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colEventId.HeaderText = "EventId";
+			this.colEventId.Name = "colEventId";
+			this.colEventId.ReadOnly = true;
+			this.colEventId.Width = 68;
+			// 
+			// colEventLocalId
+			// 
+			this.colEventLocalId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colEventLocalId.HeaderText = "EventLocalId";
+			this.colEventLocalId.Name = "colEventLocalId";
+			this.colEventLocalId.ReadOnly = true;
+			this.colEventLocalId.Width = 95;
+			// 
+			// colEventName
+			// 
+			this.colEventName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colEventName.HeaderText = "EventName";
+			this.colEventName.Name = "colEventName";
+			this.colEventName.ReadOnly = true;
+			this.colEventName.Width = 88;
+			// 
+			// colEventDescripton
+			// 
+			this.colEventDescripton.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colEventDescripton.HeaderText = "EventDescription";
+			this.colEventDescripton.Name = "colEventDescripton";
+			this.colEventDescripton.ReadOnly = true;
+			this.colEventDescripton.Width = 117;
+			// 
+			// colSetting
+			// 
+			this.colSetting.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colSetting.HeaderText = "Setting";
+			this.colSetting.Name = "colSetting";
+			this.colSetting.ReadOnly = true;
+			this.colSetting.Width = 47;
+			// 
 			// ServiceListForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -276,6 +241,9 @@ namespace CIOFContractSample_Factory
 		#endregion
 
 		private System.Windows.Forms.DataGridView dgvService;
+		private System.Windows.Forms.Button btnRefresh;
+		private System.Windows.Forms.Button btnUpdate;
+		private System.Windows.Forms.Button btnExportJson;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceLocalId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colServiceName;
@@ -289,8 +257,5 @@ namespace CIOFContractSample_Factory
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEventName;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colEventDescripton;
 		private System.Windows.Forms.DataGridViewButtonColumn colSetting;
-		private System.Windows.Forms.Button btnRefresh;
-		private System.Windows.Forms.Button btnUpdate;
-		private System.Windows.Forms.Button btnExportJson;
 	}
 }

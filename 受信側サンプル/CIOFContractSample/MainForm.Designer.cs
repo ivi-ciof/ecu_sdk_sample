@@ -49,6 +49,7 @@ namespace CIOFContractSample
 			this.btnShowDataList = new System.Windows.Forms.Button();
 			this.btnShowCalendar = new System.Windows.Forms.Button();
 			this.btnShowHIstory = new System.Windows.Forms.Button();
+			this.btnDeleteData = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
 			this.gbxSaveType.SuspendLayout();
 			this.gbxPollingMethod.SuspendLayout();
@@ -266,12 +267,24 @@ namespace CIOFContractSample
 			this.btnShowHIstory.TabIndex = 15;
 			this.btnShowHIstory.Text = "Show History";
 			this.btnShowHIstory.UseVisualStyleBackColor = true;
+			this.btnShowHIstory.Click += new System.EventHandler(this.btnShowHIstory_Click);
+			// 
+			// btnDeleteData
+			// 
+			this.btnDeleteData.Location = new System.Drawing.Point(692, 152);
+			this.btnDeleteData.Name = "btnDeleteData";
+			this.btnDeleteData.Size = new System.Drawing.Size(114, 41);
+			this.btnDeleteData.TabIndex = 16;
+			this.btnDeleteData.Text = "Delete Data";
+			this.btnDeleteData.UseVisualStyleBackColor = true;
+			this.btnDeleteData.Click += new System.EventHandler(this.btnDeleteData_Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(819, 277);
+			this.Controls.Add(this.btnDeleteData);
 			this.Controls.Add(this.btnShowHIstory);
 			this.Controls.Add(this.btnShowCalendar);
 			this.Controls.Add(this.btnShowDataList);
@@ -329,6 +342,7 @@ namespace CIOFContractSample
 		private System.Windows.Forms.Button btnShowDataList;
 		private System.Windows.Forms.Button btnShowCalendar;
 		private System.Windows.Forms.Button btnShowHIstory;
+		private System.Windows.Forms.Button btnDeleteData;
 	}
 }
 

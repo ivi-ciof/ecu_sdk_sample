@@ -34,7 +34,7 @@ namespace CIOFContractSample_Factory.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("testserviceid01")]
+        [global::System.Configuration.DefaultSettingValueAttribute("servicelocalid12")]
         public string LOCAL_SERVICE_ID {
             get {
                 return ((string)(this["LOCAL_SERVICE_ID"]));

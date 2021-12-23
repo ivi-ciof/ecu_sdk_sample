@@ -38,7 +38,6 @@ namespace CIOFContractSample_Factory
 			this.nudPollingRate = new System.Windows.Forms.NumericUpDown();
 			this.btnStart = new System.Windows.Forms.Button();
 			this.btnShowContract = new System.Windows.Forms.Button();
-			this.rbtnRequest = new System.Windows.Forms.RadioButton();
 			this.btnShowCalendar = new System.Windows.Forms.Button();
 			this.btnSendData = new System.Windows.Forms.Button();
 			this.btnSendDeleteReq = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@ namespace CIOFContractSample_Factory
 			this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.btnExecuteEvent = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEnvironmentData)).BeginInit();
 			this.SuspendLayout();
@@ -147,18 +147,6 @@ namespace CIOFContractSample_Factory
 			this.btnShowContract.Text = "Show Contract";
 			this.btnShowContract.UseVisualStyleBackColor = true;
 			this.btnShowContract.Click += new System.EventHandler(this.btnShowContract_Click);
-			// 
-			// rbtnRequest
-			// 
-			this.rbtnRequest.AutoSize = true;
-			this.rbtnRequest.Checked = true;
-			this.rbtnRequest.Location = new System.Drawing.Point(32, 93);
-			this.rbtnRequest.Name = "rbtnRequest";
-			this.rbtnRequest.Size = new System.Drawing.Size(90, 16);
-			this.rbtnRequest.TabIndex = 2;
-			this.rbtnRequest.TabStop = true;
-			this.rbtnRequest.Text = "RequestSend";
-			this.rbtnRequest.UseVisualStyleBackColor = true;
 			// 
 			// btnShowCalendar
 			// 
@@ -269,11 +257,22 @@ namespace CIOFContractSample_Factory
 			this.TimeStamp.Name = "TimeStamp";
 			this.TimeStamp.Width = 90;
 			// 
+			// btnExecuteEvent
+			// 
+			this.btnExecuteEvent.Location = new System.Drawing.Point(701, 145);
+			this.btnExecuteEvent.Name = "btnExecuteEvent";
+			this.btnExecuteEvent.Size = new System.Drawing.Size(113, 41);
+			this.btnExecuteEvent.TabIndex = 15;
+			this.btnExecuteEvent.Text = "Execute Event";
+			this.btnExecuteEvent.UseVisualStyleBackColor = true;
+			this.btnExecuteEvent.Click += new System.EventHandler(this.btnExecuteEvent_Click);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(827, 272);
+			this.Controls.Add(this.btnExecuteEvent);
 			this.Controls.Add(this.btnStop);
 			this.Controls.Add(this.btnDataList);
 			this.Controls.Add(this.btnSendDeleteReq);
@@ -281,7 +280,6 @@ namespace CIOFContractSample_Factory
 			this.Controls.Add(this.btnHistory);
 			this.Controls.Add(this.btnStart);
 			this.Controls.Add(this.btnSendData);
-			this.Controls.Add(this.rbtnRequest);
 			this.Controls.Add(this.dgvEnvironmentData);
 			this.Controls.Add(this.btnInitialSetting);
 			this.Controls.Add(this.label1);
@@ -319,7 +317,6 @@ namespace CIOFContractSample_Factory
         private System.Windows.Forms.Button btnShowService;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDataList;
-        private System.Windows.Forms.RadioButton rbtnRequest;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnSendDeleteReq;
 		private System.Windows.Forms.DataGridView dgvEnvironmentData;
@@ -328,6 +325,7 @@ namespace CIOFContractSample_Factory
 		private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
 		private System.Windows.Forms.Button btnSendData;
 		private System.Windows.Forms.Button btnShowCalendar;
+		private System.Windows.Forms.Button btnExecuteEvent;
 	}
 }
 

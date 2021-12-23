@@ -25,6 +25,16 @@ namespace CIOFContractSample.Models
 
         public virtual DbSet<TradeDataRecord> TradeDataRecords { get; set; }
 
+        /// <summary>
+        /// 取引データIDとセンサーデータIDのMap
+        /// </summary>
+        public virtual DbSet<ContractDataSensorDataMapModel> ContractDataSensorDataMaps { get; set; }
+
+        /// <summary>
+        /// 契約IDと取引データIDのマップ
+        /// </summary>
+        public virtual DbSet<ContractDataMapModel> ContractDataMaps { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
