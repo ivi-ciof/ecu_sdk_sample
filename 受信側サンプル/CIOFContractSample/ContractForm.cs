@@ -17,11 +17,19 @@ namespace CIOFContractSample
 		/// </summary>
 		ControllerModel controllerModel = null;
 
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public ContractForm()
 		{
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="contractRoot">契約情報</param>
+		/// <param name="controller">コントローラモデル</param>
 		public ContractForm(ContractRoot contractRoot, ControllerModel controller)
 		{
 			InitializeComponent();
@@ -31,6 +39,11 @@ namespace CIOFContractSample
 			RefreshDGV();			
 		}
 
+		/// <summary>
+		/// refreshボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnRefresh_Click(object sender, System.EventArgs e)
 		{
 			this.dgvContract.Rows.Clear();
@@ -38,6 +51,9 @@ namespace CIOFContractSample
 			RefreshDGV();
 		}
 
+		/// <summary>
+		/// データグリッドビュー更新
+		/// </summary>
 		private void RefreshDGV()
 		{
 			if (contract != null

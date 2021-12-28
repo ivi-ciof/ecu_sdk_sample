@@ -46,10 +46,10 @@ namespace CIOFContractSample_Factory
 			this.btnShowService = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dgvEnvironmentData = new System.Windows.Forms.DataGridView();
-			this.Temperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TimeStamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.btnExecuteEvent = new System.Windows.Forms.Button();
+			this.colTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colHumidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEnvironmentData)).BeginInit();
 			this.SuspendLayout();
@@ -68,7 +68,7 @@ namespace CIOFContractSample_Factory
 			this.lblAddress.Location = new System.Drawing.Point(30, 32);
 			this.lblAddress.Name = "lblAddress";
 			this.lblAddress.Size = new System.Drawing.Size(41, 12);
-			this.lblAddress.TabIndex = 0;
+			this.lblAddress.TabIndex = 1;
 			this.lblAddress.Text = "アドレス";
 			// 
 			// btnInitialSetting
@@ -76,7 +76,7 @@ namespace CIOFContractSample_Factory
 			this.btnInitialSetting.Location = new System.Drawing.Point(318, 16);
 			this.btnInitialSetting.Name = "btnInitialSetting";
 			this.btnInitialSetting.Size = new System.Drawing.Size(115, 44);
-			this.btnInitialSetting.TabIndex = 0;
+			this.btnInitialSetting.TabIndex = 6;
 			this.btnInitialSetting.Text = "Initial Setting";
 			this.btnInitialSetting.UseVisualStyleBackColor = true;
 			this.btnInitialSetting.Click += new System.EventHandler(this.btnInitialSetting_Click);
@@ -86,7 +86,7 @@ namespace CIOFContractSample_Factory
 			this.btnStop.Location = new System.Drawing.Point(318, 203);
 			this.btnStop.Name = "btnStop";
 			this.btnStop.Size = new System.Drawing.Size(115, 44);
-			this.btnStop.TabIndex = 0;
+			this.btnStop.TabIndex = 16;
 			this.btnStop.Text = "Stop";
 			this.btnStop.UseVisualStyleBackColor = true;
 			this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -132,7 +132,7 @@ namespace CIOFContractSample_Factory
 			this.btnStart.Margin = new System.Windows.Forms.Padding(2);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(115, 44);
-			this.btnStart.TabIndex = 0;
+			this.btnStart.TabIndex = 7;
 			this.btnStart.Text = "Start";
 			this.btnStart.UseVisualStyleBackColor = true;
 			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -143,7 +143,7 @@ namespace CIOFContractSample_Factory
 			this.btnShowContract.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowContract.Name = "btnShowContract";
 			this.btnShowContract.Size = new System.Drawing.Size(115, 44);
-			this.btnShowContract.TabIndex = 0;
+			this.btnShowContract.TabIndex = 10;
 			this.btnShowContract.Text = "Show Contract";
 			this.btnShowContract.UseVisualStyleBackColor = true;
 			this.btnShowContract.Click += new System.EventHandler(this.btnShowContract_Click);
@@ -153,7 +153,7 @@ namespace CIOFContractSample_Factory
 			this.btnShowCalendar.Location = new System.Drawing.Point(701, 80);
 			this.btnShowCalendar.Name = "btnShowCalendar";
 			this.btnShowCalendar.Size = new System.Drawing.Size(114, 43);
-			this.btnShowCalendar.TabIndex = 6;
+			this.btnShowCalendar.TabIndex = 11;
 			this.btnShowCalendar.Text = "Show Calendar";
 			this.btnShowCalendar.UseVisualStyleBackColor = true;
 			this.btnShowCalendar.Click += new System.EventHandler(this.btnShowCalendar_Click);
@@ -163,7 +163,7 @@ namespace CIOFContractSample_Factory
 			this.btnSendData.Location = new System.Drawing.Point(318, 144);
 			this.btnSendData.Name = "btnSendData";
 			this.btnSendData.Size = new System.Drawing.Size(114, 43);
-			this.btnSendData.TabIndex = 5;
+			this.btnSendData.TabIndex = 12;
 			this.btnSendData.Text = "Send Data";
 			this.btnSendData.UseVisualStyleBackColor = true;
 			this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
@@ -174,7 +174,7 @@ namespace CIOFContractSample_Factory
 			this.btnSendDeleteReq.Margin = new System.Windows.Forms.Padding(2);
 			this.btnSendDeleteReq.Name = "btnSendDeleteReq";
 			this.btnSendDeleteReq.Size = new System.Drawing.Size(115, 44);
-			this.btnSendDeleteReq.TabIndex = 4;
+			this.btnSendDeleteReq.TabIndex = 13;
 			this.btnSendDeleteReq.Text = "Latest Data Delete Req";
 			this.btnSendDeleteReq.UseVisualStyleBackColor = true;
 			this.btnSendDeleteReq.Click += new System.EventHandler(this.btnSendDeleteReq_Click);
@@ -185,7 +185,7 @@ namespace CIOFContractSample_Factory
 			this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
 			this.btnHistory.Name = "btnHistory";
 			this.btnHistory.Size = new System.Drawing.Size(115, 44);
-			this.btnHistory.TabIndex = 3;
+			this.btnHistory.TabIndex = 14;
 			this.btnHistory.Text = "Show History";
 			this.btnHistory.UseVisualStyleBackColor = true;
 			this.btnHistory.Click += new System.EventHandler(this.btnShowHistory_Click);
@@ -196,7 +196,7 @@ namespace CIOFContractSample_Factory
 			this.btnDataList.Margin = new System.Windows.Forms.Padding(2);
 			this.btnDataList.Name = "btnDataList";
 			this.btnDataList.Size = new System.Drawing.Size(115, 44);
-			this.btnDataList.TabIndex = 2;
+			this.btnDataList.TabIndex = 9;
 			this.btnDataList.Text = "Show Data List";
 			this.btnDataList.UseVisualStyleBackColor = true;
 			this.btnDataList.Click += new System.EventHandler(this.btnDataImp_Click);
@@ -207,7 +207,7 @@ namespace CIOFContractSample_Factory
 			this.btnShowService.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowService.Name = "btnShowService";
 			this.btnShowService.Size = new System.Drawing.Size(115, 44);
-			this.btnShowService.TabIndex = 1;
+			this.btnShowService.TabIndex = 8;
 			this.btnShowService.Text = "Show Service";
 			this.btnShowService.UseVisualStyleBackColor = true;
 			this.btnShowService.Click += new System.EventHandler(this.btnShowService_Click);
@@ -218,7 +218,7 @@ namespace CIOFContractSample_Factory
 			this.label1.Location = new System.Drawing.Point(149, 9);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(119, 12);
-			this.label1.TabIndex = 1;
+			this.label1.TabIndex = 0;
 			this.label1.Text = "例) http://localhost:80";
 			// 
 			// dgvEnvironmentData
@@ -229,33 +229,15 @@ namespace CIOFContractSample_Factory
 			this.dgvEnvironmentData.AllowUserToResizeRows = false;
 			this.dgvEnvironmentData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvEnvironmentData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Temperature,
-            this.Humidity,
-            this.TimeStamp});
+            this.colTemperature,
+            this.colHumidity,
+            this.colCO2});
 			this.dgvEnvironmentData.Location = new System.Drawing.Point(28, 130);
 			this.dgvEnvironmentData.Name = "dgvEnvironmentData";
 			this.dgvEnvironmentData.RowHeadersVisible = false;
 			this.dgvEnvironmentData.RowTemplate.Height = 21;
 			this.dgvEnvironmentData.Size = new System.Drawing.Size(266, 117);
-			this.dgvEnvironmentData.TabIndex = 14;
-			// 
-			// Temperature
-			// 
-			this.Temperature.HeaderText = "Temperature";
-			this.Temperature.Name = "Temperature";
-			this.Temperature.Width = 80;
-			// 
-			// Humidity
-			// 
-			this.Humidity.HeaderText = "Humidity";
-			this.Humidity.Name = "Humidity";
-			this.Humidity.Width = 80;
-			// 
-			// TimeStamp
-			// 
-			this.TimeStamp.HeaderText = "TimeStamp";
-			this.TimeStamp.Name = "TimeStamp";
-			this.TimeStamp.Width = 90;
+			this.dgvEnvironmentData.TabIndex = 5;
 			// 
 			// btnExecuteEvent
 			// 
@@ -266,6 +248,27 @@ namespace CIOFContractSample_Factory
 			this.btnExecuteEvent.Text = "Execute Event";
 			this.btnExecuteEvent.UseVisualStyleBackColor = true;
 			this.btnExecuteEvent.Click += new System.EventHandler(this.btnExecuteEvent_Click);
+			// 
+			// colTemperature
+			// 
+			this.colTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colTemperature.HeaderText = "Temperature";
+			this.colTemperature.Name = "colTemperature";
+			this.colTemperature.Width = 94;
+			// 
+			// colHumidity
+			// 
+			this.colHumidity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colHumidity.HeaderText = "Humidity";
+			this.colHumidity.Name = "colHumidity";
+			this.colHumidity.Width = 75;
+			// 
+			// colCO2
+			// 
+			this.colCO2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colCO2.HeaderText = "CO2";
+			this.colCO2.Name = "colCO2";
+			this.colCO2.Width = 52;
 			// 
 			// MainForm
 			// 
@@ -320,12 +323,12 @@ namespace CIOFContractSample_Factory
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnSendDeleteReq;
 		private System.Windows.Forms.DataGridView dgvEnvironmentData;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Temperature;
-		private System.Windows.Forms.DataGridViewTextBoxColumn Humidity;
-		private System.Windows.Forms.DataGridViewTextBoxColumn TimeStamp;
 		private System.Windows.Forms.Button btnSendData;
 		private System.Windows.Forms.Button btnShowCalendar;
 		private System.Windows.Forms.Button btnExecuteEvent;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colTemperature;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colHumidity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCO2;
 	}
 }
 

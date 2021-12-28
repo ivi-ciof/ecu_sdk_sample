@@ -23,8 +23,16 @@ namespace CIOFContractSample.Models
 		/// </summary>
 		public double Humidity { get; set; }
 		/// <summary>
+		/// 二酸化炭素
+		/// </summary>
+		public double CO2 { get; set; }
+		/// <summary>
 		/// 時間
 		/// </summary>
 		public string TimeStamp { get; set; }
+		/// <summary>
+		/// リクエスト受信フラグ
+		/// </summary>
+		public bool IsRequested { get; set; }
 	}
 }

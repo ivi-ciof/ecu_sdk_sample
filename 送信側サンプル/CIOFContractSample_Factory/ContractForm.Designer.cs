@@ -252,6 +252,7 @@ namespace CIOFContractSample_Factory
 			this.btnRefresh.TabIndex = 1;
 			this.btnRefresh.Text = "refresh";
 			this.btnRefresh.UseVisualStyleBackColor = true;
+			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
 			// 
 			// ContractForm
 			// 

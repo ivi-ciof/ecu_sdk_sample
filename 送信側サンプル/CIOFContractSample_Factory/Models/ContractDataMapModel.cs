@@ -17,7 +17,7 @@ namespace CIOFContractSample_Factory.Models
         /// <summary>
         /// 取引データID
         /// </summary>
-        public string ContractDataID { get; set; }
+        public string TradeDataID { get; set; }
 
         /// <summary>
         /// データのユニークにするためだけのやつ

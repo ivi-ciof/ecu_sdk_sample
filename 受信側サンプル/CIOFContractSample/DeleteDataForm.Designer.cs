@@ -29,7 +29,7 @@ namespace CIOFContractSample
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvDeleteData = new System.Windows.Forms.DataGridView();
 			this.btnDelete = new System.Windows.Forms.Button();
 			this.colCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -37,6 +37,7 @@ namespace CIOFContractSample
 			this.colRecordId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colHumidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colTimestamp = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDeleteData)).BeginInit();
 			this.SuspendLayout();
@@ -47,8 +48,8 @@ namespace CIOFContractSample
 			this.dgvDeleteData.AllowUserToDeleteRows = false;
 			this.dgvDeleteData.AllowUserToResizeColumns = false;
 			this.dgvDeleteData.AllowUserToResizeRows = false;
-			dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-			this.dgvDeleteData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+			this.dgvDeleteData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
 			this.dgvDeleteData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvDeleteData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCheck,
@@ -56,6 +57,7 @@ namespace CIOFContractSample
             this.colRecordId,
             this.colTemperature,
             this.colHumidity,
+            this.colCO2,
             this.colTimestamp});
 			this.dgvDeleteData.Location = new System.Drawing.Point(21, 27);
 			this.dgvDeleteData.Name = "dgvDeleteData";
@@ -72,6 +74,7 @@ namespace CIOFContractSample
 			this.btnDelete.TabIndex = 1;
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = true;
+			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
 			// colCheck
 			// 
@@ -114,6 +117,14 @@ namespace CIOFContractSample
 			this.colHumidity.ReadOnly = true;
 			this.colHumidity.Width = 75;
 			// 
+			// colCO2
+			// 
+			this.colCO2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colCO2.HeaderText = "CO2";
+			this.colCO2.Name = "colCO2";
+			this.colCO2.ReadOnly = true;
+			this.colCO2.Width = 52;
+			// 
 			// colTimestamp
 			// 
 			this.colTimestamp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -148,6 +159,7 @@ namespace CIOFContractSample
 		private System.Windows.Forms.DataGridViewTextBoxColumn colRecordId;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colTemperature;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colHumidity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCO2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colTimestamp;
 	}
 }

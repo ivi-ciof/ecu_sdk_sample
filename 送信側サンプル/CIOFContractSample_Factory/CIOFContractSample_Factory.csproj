@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CIOF-SDK, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CIOF.Controller.Sdk.0.9.1\lib\net462\CIOF-SDK.dll</HintPath>
+      <HintPath>..\packages\CIOF.Controller.Sdk.0.9.6\lib\net462\CIOF-SDK.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -127,9 +127,9 @@
     <Compile Include="MessageForm.Designer.cs">
       <DependentUpon>MessageForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202109090511505_Init.cs" />
-    <Compile Include="Migrations\202109090511505_Init.designer.cs">
-      <DependentUpon>202109090511505_Init.cs</DependentUpon>
+    <Compile Include="Migrations\202112240504037_init.cs" />
+    <Compile Include="Migrations\202112240504037_init.designer.cs">
+      <DependentUpon>202112240504037_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseColumn.cs" />
@@ -184,8 +184,8 @@
     <EmbeddedResource Include="MessageForm.resx">
       <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202109090511505_Init.resx">
-      <DependentUpon>202109090511505_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202112240504037_init.resx">
+      <DependentUpon>202112240504037_init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RequestForm.resx">
       <DependentUpon>RequestForm.cs</DependentUpon>
@@ -218,9 +218,7 @@
     <None Include="EdgeControllerAPIKey.yml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    <None Include="NLog.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

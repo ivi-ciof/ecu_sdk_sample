@@ -37,19 +37,7 @@ namespace CIOFContractSample.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("get")]
-        public string POLLING_TYPE {
-            get {
-                return ((string)(this["POLLING_TYPE"]));
-            }
-            set {
-                this["POLLING_TYPE"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("servicelocalid3")]
+        [global::System.Configuration.DefaultSettingValueAttribute("servicelocalid1")]
         public string LOCAL_SERVICE_ID {
             get {
                 return ((string)(this["LOCAL_SERVICE_ID"]));
@@ -80,6 +68,18 @@ namespace CIOFContractSample.Properties {
             }
             set {
                 this["CALENDAR_EVENT_ID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("testeventid1")]
+        public string LOCAL_EVENT_ID {
+            get {
+                return ((string)(this["LOCAL_EVENT_ID"]));
+            }
+            set {
+                this["LOCAL_EVENT_ID"] = value;
             }
         }
     }

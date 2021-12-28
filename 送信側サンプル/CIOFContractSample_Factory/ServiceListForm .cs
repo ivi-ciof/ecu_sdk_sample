@@ -33,18 +33,25 @@ namespace CIOFContractSample_Factory
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
-
+        /// <summary>
+        /// サービス実装状態
+        /// </summary>
         public ServiceImplementationsRoot serviceList { get; set; }
-
+        /// <summary>
+        /// サービスステータスリスト
+        /// </summary>
         public List<ServiceStatus> currentServiceStatusList { get; set; }
-
-        ServiceImplementationsRoot serviceImpRootModel = null;
-
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
         public ServiceListForm()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="controller">コントローラモデル</param>
         public ServiceListForm(ControllerModel controller)
         {
             InitializeComponent();
@@ -64,7 +71,11 @@ namespace CIOFContractSample_Factory
 
 
         }
-
+        /// <summary>
+        /// データグリッドビュークリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void dgvService_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
             if (e.ColumnIndex == (int)ServiceStatusList.Setting)
@@ -132,7 +143,9 @@ namespace CIOFContractSample_Factory
                 }
             }
         }
-
+        /// <summary>
+        /// データグリッドビュー更新
+        /// </summary>
         private void RefreshDGV()
         {
             var serviceList = this.controllerModel.GetServiceImplementations();
@@ -161,10 +174,10 @@ namespace CIOFContractSample_Factory
         }
 
         /// <summary>
-		/// サービス実装ステータスリスト作成
+		/// サービスステータスリスト作成
 		/// </summary>
-		/// <param name="serviceImplementationsRoot"></param>
-		/// <returns></returns>
+		/// <param name="serviceImplementationsRoot">サービス実装状態</param>
+		/// <returns>サービスステータスリスト</returns>
 		private List<ServiceStatus> createServiceStatusList(ServiceImplementationsRoot serviceImplementationsRoot)
         {
             var serviceStatusList = new List<ServiceStatus>();
@@ -225,18 +238,9 @@ namespace CIOFContractSample_Factory
         /// <summary>
         /// ステータスの値更新
         /// </summary>
-        /// <param name="serviceId"></param>
-        /// <param name="serviceLocalId"></param>
-        /// <param name="serviceStatus"></param>
-        /// <param name="serviceRemarks"></param>
-        /// <param name="processId"></param>
-        /// <param name="processLocalId"></param>
-        /// <param name="processStatus"></param>
-        /// <param name="processRemarks"></param>
-        /// <param name="eventId"></param>
-        /// <param name="eventLocalId"></param>
-        /// <param name="eventStatus"></param>
-        /// <param name="eventRemarks"></param>
+        /// <param name="serviceStatusInfo">サービスステータス</param>
+        /// <param name="processStatusInfo">プロセスステータス</param>
+        /// <param name="eventStatusInfo">イベントステータス</param>
         private void modifyServiceStatus(ServiceStatus serviceStatusInfo, ProcessStatus processStatusInfo, EventStatus eventStatusInfo)
         {
             foreach (var currentService in this.currentServiceStatusList.Where(item => item.id == serviceStatusInfo.id).ToList())
@@ -260,13 +264,21 @@ namespace CIOFContractSample_Factory
                 }
             }
         }
-
+        /// <summary>
+        /// updateボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUpdate_Click(object sender, System.EventArgs e)
 		{
             controllerModel.PutServiceImplementationStatusList(this.currentServiceStatusList);
             MessageBox.Show("サービスIDを更新しました。");
         }
-
+        /// <summary>
+        /// refreshボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void btnRefresh_Click(object sender, System.EventArgs e)
 		{
             this.dgvService.Rows.Clear();
@@ -274,7 +286,11 @@ namespace CIOFContractSample_Factory
             this.currentServiceStatusList = createServiceStatusList(serviceList);
             this.RefreshDGV();
         }
-
+        /// <summary>
+        /// Export Jsonボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void btnExportJson_Click(object sender, System.EventArgs e)
 		{
             var filePath = FileUtil.ShowSaveFileDialog(string.Empty, "JSONファイル(*.json) | *.json");

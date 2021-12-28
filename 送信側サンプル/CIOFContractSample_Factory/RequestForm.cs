@@ -13,9 +13,14 @@ namespace CIOFContractSample_Factory
 {
 	public partial class RequestForm : Form
 	{
+		/// <summary>
+		/// コントローラモデル
+		/// </summary>
 		ControllerModel controllerModel;
-
-		string localId = string.Empty;
+		/// <summary>
+		/// サービス実装ローカルID
+		/// </summary>
+		string localServiceId = string.Empty;
 
 		public RequestForm()
 		{
@@ -27,11 +32,11 @@ namespace CIOFContractSample_Factory
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="controller">コントローラのオブジェクト</param>
-		public RequestForm(string localId, ControllerModel controller)
+		public RequestForm(string localServiceId, ControllerModel controller)
 		{
 			InitializeComponent();
 			this.controllerModel = controller;
-			this.localId = localId;
+			this.localServiceId = localServiceId;
 			SetComboBox();
 		}
 
@@ -44,7 +49,11 @@ namespace CIOFContractSample_Factory
 			this.cbxType.Items.Add("delete");
 			this.cbxType.SelectedIndex = 0;
 		}
-
+		/// <summary>
+		/// Send Requestボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnSendRequest_Click(object sender, EventArgs e)
 		{
 			if (!controllerModel.IsControllerStart())
@@ -52,7 +61,7 @@ namespace CIOFContractSample_Factory
 				MessageBox.Show("コントローラが起動していません。");
 				return;
 			}
-			controllerModel.PostRequestParameterByServiceId(this.localId, this.cbxType.Text, this.textBox1.Text);
+			controllerModel.PostRequestParameterByServiceId(this.localServiceId, this.cbxType.Text, this.textBox1.Text);
 
 			MessageBox.Show("リクエストを送信しました。");
 		}

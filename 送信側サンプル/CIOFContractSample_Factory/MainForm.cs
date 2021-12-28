@@ -51,16 +51,19 @@ namespace CIOFContractSample_Factory
             InitializeComponent();
             var currentDirectory = Directory.GetCurrentDirectory();
             controllerModel = new ControllerModel(currentDirectory);
-            SetEnvironmentData();
+            InitEnvironmentData();
         }
 
         #region private method
 
-        private void SetEnvironmentData()
+        /// <summary>
+        /// 環境データ初期設定
+        /// </summary>
+        private void InitEnvironmentData()
 		{
-            this.dgvEnvironmentData.Rows.Add(22.1, 55.0, "2021/7/13");
-            this.dgvEnvironmentData.Rows.Add(15.1, 43.0, "2021/8/13");
-            this.dgvEnvironmentData.Rows.Add(18.1, 44.0, "2021/9/13");
+            this.dgvEnvironmentData.Rows.Add(22.1, 55.0, 100);
+            this.dgvEnvironmentData.Rows.Add(15.1, 43.0, 90);
+            this.dgvEnvironmentData.Rows.Add(18.1, 44.0, 80);
         }
 
         /// <summary>
@@ -111,7 +114,6 @@ namespace CIOFContractSample_Factory
                 var testObject = CIOF_SDK.Util.TypeUtil.CreateSendData();
 
                 var sensorDataModelList = new List<SensorDataModel>();
-
                 dataCount = dgvEnvironmentData.Rows.Count;
                 for (int i = 0; i < dgvEnvironmentData.Rows.Count; i++)
                 {
@@ -119,14 +121,15 @@ namespace CIOFContractSample_Factory
                     double.TryParse(dgvEnvironmentData.Rows[i].Cells[0].Value.ToString(), out temp);
                     double hum;
                     double.TryParse(dgvEnvironmentData.Rows[i].Cells[1].Value.ToString(), out hum);
-                    DateTime dateTime;
-                    DateTime.TryParse(dgvEnvironmentData.Rows[i].Cells[2].Value.ToString(), out dateTime);
+                    double co2;
+                    double.TryParse(dgvEnvironmentData.Rows[i].Cells[2].Value.ToString(), out co2);
 
                     var sensorData = new Models.SensorDataModel()
                     {
                         Tempareture = temp,
                         Humidity = hum,
-                        MeasureDate = dateTime.ToString(),
+                        CO2 = co2,
+                        MeasureDate = DateTime.Now.ToString(),
                         CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
                         UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                     };
@@ -176,7 +179,8 @@ namespace CIOFContractSample_Factory
                         var retDic = CIOF_SDK.Util.TypeUtil.CreateSendData();
                         retDic.Add("Temperature", data.Tempareture);
                         retDic.Add("Humidity", data.Humidity);
-                        retDic.Add("Time stamp", Convert.ToDateTime(data.MeasureDate));
+                        retDic.Add("CO2", data.CO2);
+                        retDic.Add("Time stamp", data.MeasureDate);
 
                         sendContentsList.Add(retDic);
                     }
@@ -188,7 +192,7 @@ namespace CIOFContractSample_Factory
                     db.ContractDataMaps.Add(new ContractDataMapModel()
                     {
                         ContractID = targetContract.id,
-                        ContractDataID = contractDataID,
+                        TradeDataID = contractDataID,
                         CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
                         UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                     }
@@ -199,8 +203,8 @@ namespace CIOFContractSample_Factory
                     {
                         db.ContractDataSensorDataMaps.Add(new ContractDataSensorDataMapModel()
                         {
-                            ContractDataID = contractDataID,
-                            SensoreDataId = tempSensorData.id,
+                            TradeDataID = contractDataID,
+                            RecordId = tempSensorData.id,
                             CreateRecodeUser = Properties.Settings.Default.CONTROLLER_ID,
                             UpdateRecodeUser = Properties.Settings.Default.CONTROLLER_ID
                         });
@@ -237,9 +241,7 @@ namespace CIOFContractSample_Factory
 
             // データ送信数：リクエストパラメータに含まれる件数を返す
             //dataCount = 1;
-            controllerModel.SetServiceMethod(new Dictionary<string, Action<string, Dictionary<string, List<Dictionary<string, object>>>>>(),
-                                    requestServiceMethodListDict,
-                                    new Dictionary<string, Action<string, string, string, string>>());
+            controllerModel.SetServiceMethod(null,requestServiceMethodListDict, null);
 
             controllerModel.SetProcessMethod(processDict);
 
@@ -270,7 +272,7 @@ namespace CIOFContractSample_Factory
         /// <param name="e"></param>
         private void btnShowContract_Click(object sender, EventArgs e)
         {
-            using (var frm = new ContractForm(controllerModel.ContractRoot))
+            using (var frm = new ContractForm(controllerModel.ContractRoot, controllerModel))
             {
                 frm.ShowDialog();
             }
@@ -331,15 +333,14 @@ namespace CIOFContractSample_Factory
                 var contractID = controllerModel.ContractRoot.contracts[0].id;
 
                 // 契約IDに紐づく取引データIDのマップ(一番古いデータ)取得
-                var targetMap = db.ContractDataMaps.Where(data => data.ContractID == contractID && !data.DeleteFlg).OrderBy(data => data.CreateRecodeTime).FirstOrDefault();
+                var targetMap = db.ContractDataMaps.Where(data => data.ContractID == contractID && !data.IsDeleted).OrderBy(data => data.CreateRecodeTime).FirstOrDefault();
 
                 if (targetMap != null)
                 {
-                    controllerModel.PostRequestParameterByServiceId(Properties.Settings.Default.LOCAL_SERVICE_ID, "delete", "From= 2021/1/1,To = 2021/12/31", targetMap.ContractDataID);
+                    controllerModel.PostRequestParameterByServiceId(Properties.Settings.Default.LOCAL_SERVICE_ID, "delete", "From= 2021/1/1,To = 2021/12/31", targetMap.TradeDataID);
 
                     // 削除要求したのでいずれ相手側のコントローラで削除を実行するはずな為、対象データの削除フラグを立てる
-                    // →TODO データの取り扱いどうすべきか各コントローラで検討した方が良い
-                    targetMap.DeleteFlg = true;
+                    targetMap.IsDeleted = true;
                     db.SaveChanges();
                 }
             }
@@ -383,21 +384,24 @@ namespace CIOFContractSample_Factory
             }            
 		}
 
-
+        /// <summary>
+        /// カレンダーイベントを実行
+        /// </summary>
         private void CalendarEvent()
 		{
-            //using (var frm = new MessageForm())
-            //{
-            //    frm.ShowDialog();
-            //    Thread.Sleep(3000); 
-            //    frm.Close();
-            //}
-        }
+			using (var frm = new MessageForm())
+			{
+				frm.ShowDialog();
+				Thread.Sleep(3000);
+				frm.Close();
+			}
+		}
 
-        // イベントに対応するプロセス実行
-        // ”カレンダー１によって実行されました”というポップアップ表示
-
-
+        /// <summary>
+        /// Show Calendarボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void btnShowCalendar_Click(object sender, EventArgs e)
 		{
             using (var frm = new CalendarForm(this.controllerModel))
@@ -405,10 +409,15 @@ namespace CIOFContractSample_Factory
                 frm.ShowDialog();
             }
         }
+        /// <summary>
+        /// Execute eventボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 
 		private void btnExecuteEvent_Click(object sender, EventArgs e)
 		{
-
+            controllerModel.ExecuteTriggerEventProcess(Properties.Settings.Default.LOCAL_EVENT_ID);
 		}
 	}
 }

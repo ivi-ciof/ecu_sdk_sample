@@ -17,12 +17,17 @@ namespace CIOFContractSample_Factory
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public CalendarForm()
 		{
 			InitializeComponent();
 		}
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="controller">コントローラモデル</param>
 		public CalendarForm(ControllerModel controller)
 		{
 			InitializeComponent();
@@ -31,7 +36,9 @@ namespace CIOFContractSample_Factory
 
 			RefreshDGV();
 		}
-
+		/// <summary>
+		/// データグリッドビュー更新
+		/// </summary>
 		private void RefreshDGV()
 		{
 			foreach (var calendarInfo in controllerModel.CalendarRoot.calendars)
@@ -41,7 +48,11 @@ namespace CIOFContractSample_Factory
 				dgvCalendar.Rows.Add(calendarInfo.id, calendarInfo.name, calendarInfo.start_date, daysOfWeek, weeksOfMonth, calendarInfo.interval, calendarInfo.interval_type, calendarInfo.end_date, calendarInfo.number_of_occurences, calendarInfo.recurrence_time_zone);
 			}
 		}
-
+		/// <summary>
+		/// refreshボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
 			controllerModel.RestartCalendarEvent();

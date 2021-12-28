@@ -15,6 +15,12 @@ namespace CIOFContractSample.Models
     public class ContractDataMapModel : BaseColumn
     {
         /// <summary>
+        /// データのユニークにするためだけのやつ
+        /// </summary>
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int id { get; set; }
+
+        /// <summary>
         /// 契約ID
         /// </summary>
         public string ContractID { get; set; }
@@ -22,12 +28,8 @@ namespace CIOFContractSample.Models
         /// <summary>
         /// 取引データID
         /// </summary>
-        public string ContractDataID { get; set; }
+        public string TradeDataID { get; set; }
 
-        /// <summary>
-        /// データのユニークにするためだけのやつ
-        /// </summary>
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+
     }
 }

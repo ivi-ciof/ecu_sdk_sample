@@ -12,7 +12,7 @@ namespace CIOFContractSample
 	public partial class ServiceListForm : Form
 	{
 		/// <summary>
-		/// 
+		/// サービス実装状態リスト表示順
 		/// </summary>
 		private enum ServiceStatusList
 		{
@@ -35,9 +35,13 @@ namespace CIOFContractSample
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
-
+		/// <summary>
+		/// サービス実装
+		/// </summary>
 		public ServiceImplementationsRoot serviceList { get; set; } 
-
+		/// <summary>
+		/// サービスステータスリスト
+		/// </summary>
 		public List<ServiceStatus> currentServiceStatusList { get; set; }
 
 		/// <summary>
@@ -48,6 +52,10 @@ namespace CIOFContractSample
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="controller">コントローラモデル</param>
 		public ServiceListForm(ControllerModel controller)
 		{
 			InitializeComponent();
@@ -66,6 +74,11 @@ namespace CIOFContractSample
 			}
 		}
 
+		/// <summary>
+		/// データグリッドビュークリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void dgvServiceList_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.ColumnIndex == (int)ServiceStatusList.Setting)
@@ -134,6 +147,11 @@ namespace CIOFContractSample
 			}	
 		}
 
+		/// <summary>
+		/// refreshボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnRefresh_Click(object sender, EventArgs e)
 		{
 			this.dgvServiceList.Rows.Clear();
@@ -142,6 +160,9 @@ namespace CIOFContractSample
 			this.RefreshDGV();
 		}
 
+		/// <summary>
+		/// データグリッドビュー更新
+		/// </summary>
 		private void RefreshDGV()
 		{		
 			foreach (var serviceInfo in serviceList.service_Implementations)
@@ -167,6 +188,11 @@ namespace CIOFContractSample
 			}
 		}
 
+		/// <summary>
+		/// updateボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{			
 			controllerModel.PutServiceImplementationStatusList(this.currentServiceStatusList);
@@ -176,21 +202,18 @@ namespace CIOFContractSample
 		/// <summary>
 		/// サービス実装ステータスリスト作成
 		/// </summary>
-		/// <param name="serviceImplementationsRoot"></param>
-		/// <returns></returns>
+		/// <param name="serviceImplementationsRoot">サービス実装定義</param>
+		/// <returns>サービス実装ステータスリスト</returns>
 		private List<ServiceStatus> createServiceStatusList(ServiceImplementationsRoot serviceImplementationsRoot)
 		{
 			var serviceStatusList = new List<ServiceStatus>();
-
 			var selectedServiceList = this.serviceList.service_Implementations.GroupBy(item => item.id);
-
 			foreach (var selectedService in selectedServiceList)
 			{
 				var serviceStatus = new ServiceStatus() { id = selectedService.First().id, 
 					                                      local_id = selectedService.First().local_id, 
 					                                      status = ServiceStatusConst.NORMAL, 
 					                                      remarks = string.Empty};
-
 				var processList = new List<ProcessStatus>();
 				foreach (var serviceInfo in selectedService)
 				{
@@ -222,25 +245,15 @@ namespace CIOFContractSample
 				serviceStatus.process_implementations = processList.ToArray();
 				serviceStatusList.Add(serviceStatus);
 			}
-
 			return serviceStatusList;
 		}
 
 		/// <summary>
 		/// ステータスの値更新
 		/// </summary>
-		/// <param name="serviceId"></param>
-		/// <param name="serviceLocalId"></param>
-		/// <param name="serviceStatus"></param>
-		/// <param name="serviceRemarks"></param>
-		/// <param name="processId"></param>
-		/// <param name="processLocalId"></param>
-		/// <param name="processStatus"></param>
-		/// <param name="processRemarks"></param>
-		/// <param name="eventId"></param>
-		/// <param name="eventLocalId"></param>
-		/// <param name="eventStatus"></param>
-		/// <param name="eventRemarks"></param>
+		/// <param name="serviceStatusInfo">サービスステータス</param>
+		/// <param name="processStatusInfo">プロセスステータス</param>
+		/// <param name="eventStatusInfo">イベントステータス</param>
 		private void modifyServiceStatus(ServiceStatus serviceStatusInfo, ProcessStatus processStatusInfo, EventStatus eventStatusInfo)
 		{
 			foreach(var currentService in this.currentServiceStatusList.Where(item => item.id == serviceStatusInfo.id).ToList())
@@ -265,7 +278,11 @@ namespace CIOFContractSample
 			}			
 		}
 
-
+		/// <summary>
+		/// Export Jsonボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnExportJson_Click(object sender, EventArgs e)
 		{
 			var filePath = FileUtil.ShowSaveFileDialog(string.Empty, "JSONファイル(*.json) | *.json");

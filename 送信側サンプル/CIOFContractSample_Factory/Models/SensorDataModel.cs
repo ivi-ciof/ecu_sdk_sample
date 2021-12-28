@@ -26,6 +26,11 @@ namespace CIOFContractSample_Factory.Models
         public double Humidity { get; set; }
 
         /// <summary>
+        /// CO2
+        /// </summary>
+        public double CO2 { get; set; }
+
+        /// <summary>
         /// データ時刻
         /// </summary>
         public string MeasureDate { get; set; }

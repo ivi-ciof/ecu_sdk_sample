@@ -32,7 +32,7 @@ namespace CIOFContractSample
 			this.cbxType = new System.Windows.Forms.ComboBox();
 			this.lblType = new System.Windows.Forms.Label();
 			this.lblCondition = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtCondition = new System.Windows.Forms.TextBox();
 			this.btnSendRequest = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
@@ -64,13 +64,13 @@ namespace CIOFContractSample
 			this.lblCondition.TabIndex = 3;
 			this.lblCondition.Text = "condition";
 			// 
-			// textBox1
+			// txtCondition
 			// 
-			this.textBox1.Location = new System.Drawing.Point(114, 93);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(230, 19);
-			this.textBox1.TabIndex = 4;
-			this.textBox1.Text = "Count=3,From = 2021/1/1,To=2021/12/31";
+			this.txtCondition.Location = new System.Drawing.Point(114, 93);
+			this.txtCondition.Name = "txtCondition";
+			this.txtCondition.Size = new System.Drawing.Size(230, 19);
+			this.txtCondition.TabIndex = 4;
+			this.txtCondition.Text = "Count=3,From = 2021/1/1,To=2021/12/31";
 			// 
 			// btnSendRequest
 			// 
@@ -88,7 +88,7 @@ namespace CIOFContractSample
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(366, 270);
 			this.Controls.Add(this.btnSendRequest);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.txtCondition);
 			this.Controls.Add(this.lblCondition);
 			this.Controls.Add(this.lblType);
 			this.Controls.Add(this.cbxType);
@@ -107,7 +107,7 @@ namespace CIOFContractSample
 		private System.Windows.Forms.ComboBox cbxType;
 		private System.Windows.Forms.Label lblType;
 		private System.Windows.Forms.Label lblCondition;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox txtCondition;
 		private System.Windows.Forms.Button btnSendRequest;
 	}
 }

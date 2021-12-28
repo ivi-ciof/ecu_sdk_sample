@@ -35,15 +35,15 @@ namespace CIOFContractSample
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvDataList = new System.Windows.Forms.DataGridView();
-			this.btnRefresh = new System.Windows.Forms.Button();
-			this.btnExportJson = new System.Windows.Forms.Button();
-			this.btnUpdate = new System.Windows.Forms.Button();
 			this.colDataId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colDataLocalId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colServiceId = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colSettings = new System.Windows.Forms.DataGridViewButtonColumn();
+			this.btnRefresh = new System.Windows.Forms.Button();
+			this.btnExportJson = new System.Windows.Forms.Button();
+			this.btnUpdate = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDataList)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -68,35 +68,6 @@ namespace CIOFContractSample
 			this.dgvDataList.Size = new System.Drawing.Size(807, 426);
 			this.dgvDataList.TabIndex = 0;
 			this.dgvDataList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDataList_CellContentClick);
-			// 
-			// btnRefresh
-			// 
-			this.btnRefresh.Location = new System.Drawing.Point(12, 21);
-			this.btnRefresh.Name = "btnRefresh";
-			this.btnRefresh.Size = new System.Drawing.Size(88, 35);
-			this.btnRefresh.TabIndex = 1;
-			this.btnRefresh.Text = "refresh";
-			this.btnRefresh.UseVisualStyleBackColor = true;
-			// 
-			// btnExportJson
-			// 
-			this.btnExportJson.Location = new System.Drawing.Point(731, 21);
-			this.btnExportJson.Name = "btnExportJson";
-			this.btnExportJson.Size = new System.Drawing.Size(88, 35);
-			this.btnExportJson.TabIndex = 2;
-			this.btnExportJson.Text = "Export Json";
-			this.btnExportJson.UseVisualStyleBackColor = true;
-			this.btnExportJson.Click += new System.EventHandler(this.btnExportJson_Click);
-			// 
-			// btnUpdate
-			// 
-			this.btnUpdate.Location = new System.Drawing.Point(371, 519);
-			this.btnUpdate.Name = "btnUpdate";
-			this.btnUpdate.Size = new System.Drawing.Size(88, 35);
-			this.btnUpdate.TabIndex = 3;
-			this.btnUpdate.Text = "update";
-			this.btnUpdate.UseVisualStyleBackColor = true;
-			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// colDataId
 			// 
@@ -155,6 +126,36 @@ namespace CIOFContractSample
 			this.colSettings.Name = "colSettings";
 			this.colSettings.ReadOnly = true;
 			this.colSettings.Width = 53;
+			// 
+			// btnRefresh
+			// 
+			this.btnRefresh.Location = new System.Drawing.Point(12, 21);
+			this.btnRefresh.Name = "btnRefresh";
+			this.btnRefresh.Size = new System.Drawing.Size(88, 35);
+			this.btnRefresh.TabIndex = 1;
+			this.btnRefresh.Text = "refresh";
+			this.btnRefresh.UseVisualStyleBackColor = true;
+			this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+			// 
+			// btnExportJson
+			// 
+			this.btnExportJson.Location = new System.Drawing.Point(731, 21);
+			this.btnExportJson.Name = "btnExportJson";
+			this.btnExportJson.Size = new System.Drawing.Size(88, 35);
+			this.btnExportJson.TabIndex = 2;
+			this.btnExportJson.Text = "Export Json";
+			this.btnExportJson.UseVisualStyleBackColor = true;
+			this.btnExportJson.Click += new System.EventHandler(this.btnExportJson_Click);
+			// 
+			// btnUpdate
+			// 
+			this.btnUpdate.Location = new System.Drawing.Point(371, 519);
+			this.btnUpdate.Name = "btnUpdate";
+			this.btnUpdate.Size = new System.Drawing.Size(88, 35);
+			this.btnUpdate.TabIndex = 3;
+			this.btnUpdate.Text = "update";
+			this.btnUpdate.UseVisualStyleBackColor = true;
+			this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
 			// 
 			// DataListForm
 			// 

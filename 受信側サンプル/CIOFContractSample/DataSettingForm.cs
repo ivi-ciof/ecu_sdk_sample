@@ -18,14 +18,22 @@ namespace CIOFContractSample
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
-
+		/// <summary>
+		/// データステータス
+		/// </summary>
 		public DataStatus DataStatusInfo { get; set; }
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public DataSettingForm()
 		{
 			InitializeComponent();
 		}
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="controller">コントローラモデル</param>
+		/// <param name="dataStatus">データステータス</param>
 		public DataSettingForm (ControllerModel controller, DataStatus dataStatus)
 		{
 			InitializeComponent();
@@ -45,7 +53,11 @@ namespace CIOFContractSample
 				this.dgvDataProperty.Rows.Add(dataProperty.index, dataProperty.id, dataProperty.local_id, dataProperty.name, dataProperty.status, dataProperty.remarks);
 			}
 		}
-
+		/// <summary>
+		/// updateボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			var dataStatusPropertyList = new List<DataPropertyStatus>();
@@ -75,7 +87,7 @@ namespace CIOFContractSample
 		/// <summary>
 		/// コンボボックス設定
 		/// </summary>
-		/// <param name="comboBox"></param>
+		/// <param name="comboBox">コンボボックスオブジェクト</param>
 		private void SetComboBoxItem(ComboBox comboBox)
 		{
 			comboBox.Items.Add(DataStatusConst.NORMAL);
@@ -86,7 +98,7 @@ namespace CIOFContractSample
 		/// <summary>
 		/// カラムのコンボボックス設定
 		/// </summary>
-		/// <param name="comboBoxColumn"></param>
+		/// <param name="comboBoxColumn">コンボボックスカラムオブジェクト</param>
 		private void SetComboBoxColumnItem(DataGridViewComboBoxColumn comboBoxColumn)
 		{
 			comboBoxColumn.Items.Add(DataStatusConst.NORMAL);

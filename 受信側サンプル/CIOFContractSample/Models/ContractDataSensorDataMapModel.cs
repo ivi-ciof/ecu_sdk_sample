@@ -7,13 +7,8 @@ using System.Threading.Tasks;
 
 namespace CIOFContractSample.Models
 {
-    /// <summary>
-    /// 取引データIDとセンサーデータの詳細
-    /// </summary>
-    /// <remarks>センサーのデータ</remarks>
-    [Table("ContractDataSensorDataMap")]
-    public class ContractDataSensorDataMapModel : BaseColumn
-    {
+	public class ContractDataSensorDataMapModel : BaseColumn
+	{
         /// <summary>
         /// 内部 ID   →Insert時の自動採番
         /// </summary>
@@ -23,11 +18,11 @@ namespace CIOFContractSample.Models
         /// <summary>
         /// 取引データID
         /// </summary>
-        public string ContractDataID { get; set; }
+        public string TradeDataID { get; set; }
 
         /// <summary>
         /// センサーデータID
         /// </summary>
-        public int SensoreDataId { get; set; }
+        public int RecordId { get; set; }
     }
 }

@@ -12,6 +12,9 @@ namespace CIOFContractSample_Factory
 {
 	public partial class MessageForm : Form
 	{
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public MessageForm()
 		{
 			InitializeComponent();

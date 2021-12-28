@@ -36,23 +36,24 @@ namespace CIOFContractSample_Factory
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dgvContractMap = new System.Windows.Forms.DataGridView();
+			this.ContractID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ContractDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CreateRecordTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dgvContractDataSensorDataMap = new System.Windows.Forms.DataGridView();
+			this.ContractDataID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SensorDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.CreateRecordTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.lblContractDataDetail = new System.Windows.Forms.Label();
 			this.lblContractMap = new System.Windows.Forms.Label();
 			this.btnUpdate = new System.Windows.Forms.Button();
 			this.dgvSensorData = new System.Windows.Forms.DataGridView();
 			this.lblSensorData = new System.Windows.Forms.Label();
 			this.btnSendDeleteRequest = new System.Windows.Forms.Button();
-			this.ContractID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ContractDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CreateRecordTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ContractDataID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SensorDataID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.CreateRecordTime2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colTemperature = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colHumidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCO2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colMeasureDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvContractMap)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvContractDataSensorDataMap)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dgvSensorData)).BeginInit();
@@ -88,6 +89,30 @@ namespace CIOFContractSample_Factory
 			this.dgvContractMap.Size = new System.Drawing.Size(548, 188);
 			this.dgvContractMap.TabIndex = 2;
 			// 
+			// ContractID
+			// 
+			this.ContractID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.ContractID.HeaderText = "ContractID";
+			this.ContractID.Name = "ContractID";
+			this.ContractID.ReadOnly = true;
+			this.ContractID.Width = 85;
+			// 
+			// ContractDataID
+			// 
+			this.ContractDataID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.ContractDataID.HeaderText = "ContractDataID";
+			this.ContractDataID.Name = "ContractDataID";
+			this.ContractDataID.ReadOnly = true;
+			this.ContractDataID.Width = 109;
+			// 
+			// CreateRecordTime
+			// 
+			this.CreateRecordTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.CreateRecordTime.HeaderText = "CreateRecordTime";
+			this.CreateRecordTime.Name = "CreateRecordTime";
+			this.CreateRecordTime.ReadOnly = true;
+			this.CreateRecordTime.Width = 125;
+			// 
 			// dgvContractDataSensorDataMap
 			// 
 			this.dgvContractDataSensorDataMap.AllowUserToAddRows = false;
@@ -117,6 +142,29 @@ namespace CIOFContractSample_Factory
 			this.dgvContractDataSensorDataMap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvContractDataSensorDataMap.Size = new System.Drawing.Size(548, 188);
 			this.dgvContractDataSensorDataMap.TabIndex = 4;
+			// 
+			// ContractDataID2
+			// 
+			this.ContractDataID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.ContractDataID2.HeaderText = "ContractDataID";
+			this.ContractDataID2.Name = "ContractDataID2";
+			this.ContractDataID2.ReadOnly = true;
+			this.ContractDataID2.Width = 109;
+			// 
+			// SensorDataID
+			// 
+			this.SensorDataID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.SensorDataID.HeaderText = "SensorDataID";
+			this.SensorDataID.Name = "SensorDataID";
+			this.SensorDataID.ReadOnly = true;
+			// 
+			// CreateRecordTime2
+			// 
+			this.CreateRecordTime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.CreateRecordTime2.HeaderText = "CreateRecordTime";
+			this.CreateRecordTime2.Name = "CreateRecordTime2";
+			this.CreateRecordTime2.ReadOnly = true;
+			this.CreateRecordTime2.Width = 125;
 			// 
 			// lblContractDataDetail
 			// 
@@ -159,9 +207,10 @@ namespace CIOFContractSample_Factory
 			this.dgvSensorData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvSensorData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.colTemperature,
+            this.colHumidity,
+            this.colCO2,
+            this.colMeasureDate});
 			this.dgvSensorData.Location = new System.Drawing.Point(22, 485);
 			this.dgvSensorData.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvSensorData.Name = "dgvSensorData";
@@ -198,53 +247,6 @@ namespace CIOFContractSample_Factory
 			this.btnSendDeleteRequest.UseVisualStyleBackColor = true;
 			this.btnSendDeleteRequest.Click += new System.EventHandler(this.btnSendDeleteRequest_Click);
 			// 
-			// ContractID
-			// 
-			this.ContractID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.ContractID.HeaderText = "ContractID";
-			this.ContractID.Name = "ContractID";
-			this.ContractID.ReadOnly = true;
-			this.ContractID.Width = 85;
-			// 
-			// ContractDataID
-			// 
-			this.ContractDataID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.ContractDataID.HeaderText = "ContractDataID";
-			this.ContractDataID.Name = "ContractDataID";
-			this.ContractDataID.ReadOnly = true;
-			this.ContractDataID.Width = 109;
-			// 
-			// CreateRecordTime
-			// 
-			this.CreateRecordTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.CreateRecordTime.HeaderText = "CreateRecordTime";
-			this.CreateRecordTime.Name = "CreateRecordTime";
-			this.CreateRecordTime.ReadOnly = true;
-			this.CreateRecordTime.Width = 125;
-			// 
-			// ContractDataID2
-			// 
-			this.ContractDataID2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.ContractDataID2.HeaderText = "ContractDataID";
-			this.ContractDataID2.Name = "ContractDataID2";
-			this.ContractDataID2.ReadOnly = true;
-			this.ContractDataID2.Width = 109;
-			// 
-			// SensorDataID
-			// 
-			this.SensorDataID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.SensorDataID.HeaderText = "SensorDataID";
-			this.SensorDataID.Name = "SensorDataID";
-			this.SensorDataID.ReadOnly = true;
-			// 
-			// CreateRecordTime2
-			// 
-			this.CreateRecordTime2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.CreateRecordTime2.HeaderText = "CreateRecordTime";
-			this.CreateRecordTime2.Name = "CreateRecordTime2";
-			this.CreateRecordTime2.ReadOnly = true;
-			this.CreateRecordTime2.Width = 125;
-			// 
 			// dataGridViewTextBoxColumn1
 			// 
 			this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -252,29 +254,37 @@ namespace CIOFContractSample_Factory
 			this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
 			this.dataGridViewTextBoxColumn1.ReadOnly = true;
 			// 
-			// dataGridViewTextBoxColumn2
+			// colTemperature
 			// 
-			this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewTextBoxColumn2.HeaderText = "Temparature";
-			this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-			this.dataGridViewTextBoxColumn2.ReadOnly = true;
-			this.dataGridViewTextBoxColumn2.Width = 94;
+			this.colTemperature.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colTemperature.HeaderText = "Temparature";
+			this.colTemperature.Name = "colTemperature";
+			this.colTemperature.ReadOnly = true;
+			this.colTemperature.Width = 94;
 			// 
-			// dataGridViewTextBoxColumn3
+			// colHumidity
 			// 
-			this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewTextBoxColumn3.HeaderText = "Humidity";
-			this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-			this.dataGridViewTextBoxColumn3.ReadOnly = true;
-			this.dataGridViewTextBoxColumn3.Width = 75;
+			this.colHumidity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colHumidity.HeaderText = "Humidity";
+			this.colHumidity.Name = "colHumidity";
+			this.colHumidity.ReadOnly = true;
+			this.colHumidity.Width = 75;
 			// 
-			// dataGridViewTextBoxColumn4
+			// colCO2
 			// 
-			this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-			this.dataGridViewTextBoxColumn4.HeaderText = "MeasureDate";
-			this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-			this.dataGridViewTextBoxColumn4.ReadOnly = true;
-			this.dataGridViewTextBoxColumn4.Width = 97;
+			this.colCO2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colCO2.HeaderText = "CO2";
+			this.colCO2.Name = "colCO2";
+			this.colCO2.ReadOnly = true;
+			this.colCO2.Width = 52;
+			// 
+			// colMeasureDate
+			// 
+			this.colMeasureDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+			this.colMeasureDate.HeaderText = "MeasureDate";
+			this.colMeasureDate.Name = "colMeasureDate";
+			this.colMeasureDate.ReadOnly = true;
+			this.colMeasureDate.Width = 97;
 			// 
 			// HistoryListForm
 			// 
@@ -320,8 +330,9 @@ namespace CIOFContractSample_Factory
 		private System.Windows.Forms.DataGridViewTextBoxColumn SensorDataID;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CreateRecordTime2;
 		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-		private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colTemperature;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colHumidity;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCO2;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colMeasureDate;
 	}
 }

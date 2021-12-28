@@ -22,7 +22,10 @@ namespace CIOFContractSample_Factory
             // 画面更新
             UpdateShowDatas();
         }
-
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="controller">コントローラモデル</param>
         public HistoryListForm(ControllerModel controller)
 		{
             InitializeComponent();
@@ -46,21 +49,21 @@ namespace CIOFContractSample_Factory
                 dgvContractMap.Rows.Clear();
                 foreach (var dataMap in db.ContractDataMaps)
                 {
-                    dgvContractMap.Rows.Add(dataMap.ContractID, dataMap.ContractDataID, dataMap.CreateRecodeTime);
+                    dgvContractMap.Rows.Add(dataMap.ContractID, dataMap.TradeDataID, dataMap.CreateRecodeTime);
                 }
 
                 // 取引データID-センサーデータID
                 dgvContractDataSensorDataMap.Rows.Clear();
                 foreach (var dataMap in db.ContractDataSensorDataMaps)
                 {
-                    dgvContractDataSensorDataMap.Rows.Add(dataMap.ContractDataID, dataMap.SensoreDataId,dataMap.CreateRecodeTime);
+                    dgvContractDataSensorDataMap.Rows.Add(dataMap.TradeDataID, dataMap.RecordId,dataMap.CreateRecodeTime);
                 }
 
                 // センサーデータ詳細
                 dgvSensorData.Rows.Clear();
                 foreach(var sensorData in db.SensorDatas)
                 {
-                    dgvSensorData.Rows.Add(sensorData.id, sensorData.Tempareture, sensorData.Humidity, sensorData.MeasureDate);
+                    dgvSensorData.Rows.Add(sensorData.id, sensorData.Tempareture, sensorData.Humidity, sensorData.CO2, sensorData.MeasureDate);
 
                 }
             }
@@ -79,7 +82,11 @@ namespace CIOFContractSample_Factory
         {
             UpdateShowDatas();
         }
-
+        /// <summary>
+        /// Delete Requestボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
 		private void btnSendDeleteRequest_Click(object sender, System.EventArgs e)
 		{
             var selectedContractDataId = dgvContractMap.SelectedRows[0].Cells[0].Value as string;

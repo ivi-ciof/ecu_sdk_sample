@@ -43,16 +43,16 @@ namespace CIOFContractSample
 			this.gbxSaveType = new System.Windows.Forms.GroupBox();
 			this.rbtnSaveFile = new System.Windows.Forms.RadioButton();
 			this.rbtnDB = new System.Windows.Forms.RadioButton();
-			this.gbxPollingMethod = new System.Windows.Forms.GroupBox();
-			this.rbtnGetData = new System.Windows.Forms.RadioButton();
 			this.btnShowServiceList = new System.Windows.Forms.Button();
 			this.btnShowDataList = new System.Windows.Forms.Button();
 			this.btnShowCalendar = new System.Windows.Forms.Button();
-			this.btnShowHIstory = new System.Windows.Forms.Button();
+			this.btnShowHistory = new System.Windows.Forms.Button();
 			this.btnDeleteData = new System.Windows.Forms.Button();
+			this.lblFilePath = new System.Windows.Forms.Label();
+			this.tbxSelect = new System.Windows.Forms.TextBox();
+			this.btnSelect = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).BeginInit();
 			this.gbxSaveType.SuspendLayout();
-			this.gbxPollingMethod.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtAddress
@@ -87,7 +87,7 @@ namespace CIOFContractSample
 			this.btnStop.Location = new System.Drawing.Point(315, 210);
 			this.btnStop.Name = "btnStop";
 			this.btnStop.Size = new System.Drawing.Size(115, 44);
-			this.btnStop.TabIndex = 7;
+			this.btnStop.TabIndex = 16;
 			this.btnStop.Text = "Stop";
 			this.btnStop.UseVisualStyleBackColor = true;
 			this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -107,7 +107,7 @@ namespace CIOFContractSample
 			this.lblSecond.Location = new System.Drawing.Point(277, 65);
 			this.lblSecond.Name = "lblSecond";
 			this.lblSecond.Size = new System.Drawing.Size(17, 12);
-			this.lblSecond.TabIndex = 6;
+			this.lblSecond.TabIndex = 4;
 			this.lblSecond.Text = "秒";
 			// 
 			// nudPollingRate
@@ -138,7 +138,7 @@ namespace CIOFContractSample
 			this.btnStart.Margin = new System.Windows.Forms.Padding(2);
 			this.btnStart.Name = "btnStart";
 			this.btnStart.Size = new System.Drawing.Size(115, 44);
-			this.btnStart.TabIndex = 8;
+			this.btnStart.TabIndex = 7;
 			this.btnStart.Text = "Start";
 			this.btnStart.UseVisualStyleBackColor = true;
 			this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -149,7 +149,7 @@ namespace CIOFContractSample
 			this.btnShowContract.Margin = new System.Windows.Forms.Padding(2);
 			this.btnShowContract.Name = "btnShowContract";
 			this.btnShowContract.Size = new System.Drawing.Size(115, 44);
-			this.btnShowContract.TabIndex = 9;
+			this.btnShowContract.TabIndex = 10;
 			this.btnShowContract.Text = "Show Contract";
 			this.btnShowContract.UseVisualStyleBackColor = true;
 			this.btnShowContract.Click += new System.EventHandler(this.btnShowContract_Click);
@@ -159,7 +159,7 @@ namespace CIOFContractSample
 			this.btnShowEnvironmentData.Location = new System.Drawing.Point(315, 150);
 			this.btnShowEnvironmentData.Name = "btnShowEnvironmentData";
 			this.btnShowEnvironmentData.Size = new System.Drawing.Size(115, 44);
-			this.btnShowEnvironmentData.TabIndex = 10;
+			this.btnShowEnvironmentData.TabIndex = 12;
 			this.btnShowEnvironmentData.Text = "Show Environment Data";
 			this.btnShowEnvironmentData.UseVisualStyleBackColor = true;
 			this.btnShowEnvironmentData.Click += new System.EventHandler(this.btnShowEnvironmentData_Click);
@@ -169,7 +169,7 @@ namespace CIOFContractSample
 			this.btnSendRequest.Location = new System.Drawing.Point(444, 150);
 			this.btnSendRequest.Name = "btnSendRequest";
 			this.btnSendRequest.Size = new System.Drawing.Size(115, 43);
-			this.btnSendRequest.TabIndex = 11;
+			this.btnSendRequest.TabIndex = 13;
 			this.btnSendRequest.Text = "Send Request";
 			this.btnSendRequest.UseVisualStyleBackColor = true;
 			this.btnSendRequest.Click += new System.EventHandler(this.btnSendRequest_Click);
@@ -178,7 +178,7 @@ namespace CIOFContractSample
 			// 
 			this.gbxSaveType.Controls.Add(this.rbtnSaveFile);
 			this.gbxSaveType.Controls.Add(this.rbtnDB);
-			this.gbxSaveType.Location = new System.Drawing.Point(32, 146);
+			this.gbxSaveType.Location = new System.Drawing.Point(33, 100);
 			this.gbxSaveType.Name = "gbxSaveType";
 			this.gbxSaveType.Size = new System.Drawing.Size(261, 53);
 			this.gbxSaveType.TabIndex = 5;
@@ -207,34 +207,12 @@ namespace CIOFContractSample
 			this.rbtnDB.Text = "DB";
 			this.rbtnDB.UseVisualStyleBackColor = true;
 			// 
-			// gbxPollingMethod
-			// 
-			this.gbxPollingMethod.Controls.Add(this.rbtnGetData);
-			this.gbxPollingMethod.Location = new System.Drawing.Point(32, 93);
-			this.gbxPollingMethod.Name = "gbxPollingMethod";
-			this.gbxPollingMethod.Size = new System.Drawing.Size(262, 47);
-			this.gbxPollingMethod.TabIndex = 4;
-			this.gbxPollingMethod.TabStop = false;
-			this.gbxPollingMethod.Text = "Polling Method";
-			// 
-			// rbtnGetData
-			// 
-			this.rbtnGetData.AutoSize = true;
-			this.rbtnGetData.Checked = true;
-			this.rbtnGetData.Location = new System.Drawing.Point(16, 18);
-			this.rbtnGetData.Name = "rbtnGetData";
-			this.rbtnGetData.Size = new System.Drawing.Size(69, 16);
-			this.rbtnGetData.TabIndex = 0;
-			this.rbtnGetData.TabStop = true;
-			this.rbtnGetData.Text = "Get Data";
-			this.rbtnGetData.UseVisualStyleBackColor = true;
-			// 
 			// btnShowServiceList
 			// 
 			this.btnShowServiceList.Location = new System.Drawing.Point(315, 83);
 			this.btnShowServiceList.Name = "btnShowServiceList";
 			this.btnShowServiceList.Size = new System.Drawing.Size(115, 44);
-			this.btnShowServiceList.TabIndex = 12;
+			this.btnShowServiceList.TabIndex = 8;
 			this.btnShowServiceList.Text = "Show Service List";
 			this.btnShowServiceList.UseVisualStyleBackColor = true;
 			this.btnShowServiceList.Click += new System.EventHandler(this.btnShowServiceList_Click);
@@ -244,7 +222,7 @@ namespace CIOFContractSample
 			this.btnShowDataList.Location = new System.Drawing.Point(444, 83);
 			this.btnShowDataList.Name = "btnShowDataList";
 			this.btnShowDataList.Size = new System.Drawing.Size(114, 44);
-			this.btnShowDataList.TabIndex = 13;
+			this.btnShowDataList.TabIndex = 9;
 			this.btnShowDataList.Text = "Show Data List";
 			this.btnShowDataList.UseVisualStyleBackColor = true;
 			this.btnShowDataList.Click += new System.EventHandler(this.btnShowDataList_Click);
@@ -254,42 +232,70 @@ namespace CIOFContractSample
 			this.btnShowCalendar.Location = new System.Drawing.Point(692, 83);
 			this.btnShowCalendar.Name = "btnShowCalendar";
 			this.btnShowCalendar.Size = new System.Drawing.Size(115, 44);
-			this.btnShowCalendar.TabIndex = 14;
+			this.btnShowCalendar.TabIndex = 11;
 			this.btnShowCalendar.Text = "Show Calendar";
 			this.btnShowCalendar.UseVisualStyleBackColor = true;
 			this.btnShowCalendar.Click += new System.EventHandler(this.btnShowCalendar_Click);
 			// 
-			// btnShowHIstory
+			// btnShowHistory
 			// 
-			this.btnShowHIstory.Location = new System.Drawing.Point(568, 150);
-			this.btnShowHIstory.Name = "btnShowHIstory";
-			this.btnShowHIstory.Size = new System.Drawing.Size(114, 44);
-			this.btnShowHIstory.TabIndex = 15;
-			this.btnShowHIstory.Text = "Show History";
-			this.btnShowHIstory.UseVisualStyleBackColor = true;
-			this.btnShowHIstory.Click += new System.EventHandler(this.btnShowHIstory_Click);
+			this.btnShowHistory.Location = new System.Drawing.Point(568, 150);
+			this.btnShowHistory.Name = "btnShowHistory";
+			this.btnShowHistory.Size = new System.Drawing.Size(114, 44);
+			this.btnShowHistory.TabIndex = 14;
+			this.btnShowHistory.Text = "Show History";
+			this.btnShowHistory.UseVisualStyleBackColor = true;
+			this.btnShowHistory.Click += new System.EventHandler(this.btnShowHistory_Click);
 			// 
 			// btnDeleteData
 			// 
 			this.btnDeleteData.Location = new System.Drawing.Point(692, 152);
 			this.btnDeleteData.Name = "btnDeleteData";
 			this.btnDeleteData.Size = new System.Drawing.Size(114, 41);
-			this.btnDeleteData.TabIndex = 16;
+			this.btnDeleteData.TabIndex = 15;
 			this.btnDeleteData.Text = "Delete Data";
 			this.btnDeleteData.UseVisualStyleBackColor = true;
 			this.btnDeleteData.Click += new System.EventHandler(this.btnDeleteData_Click);
+			// 
+			// lblFilePath
+			// 
+			this.lblFilePath.AutoSize = true;
+			this.lblFilePath.Location = new System.Drawing.Point(36, 166);
+			this.lblFilePath.Name = "lblFilePath";
+			this.lblFilePath.Size = new System.Drawing.Size(47, 12);
+			this.lblFilePath.TabIndex = 17;
+			this.lblFilePath.Text = "FilePath";
+			// 
+			// tbxSelect
+			// 
+			this.tbxSelect.Location = new System.Drawing.Point(89, 163);
+			this.tbxSelect.Name = "tbxSelect";
+			this.tbxSelect.Size = new System.Drawing.Size(145, 19);
+			this.tbxSelect.TabIndex = 18;
+			// 
+			// btnSelect
+			// 
+			this.btnSelect.Location = new System.Drawing.Point(240, 162);
+			this.btnSelect.Name = "btnSelect";
+			this.btnSelect.Size = new System.Drawing.Size(54, 20);
+			this.btnSelect.TabIndex = 19;
+			this.btnSelect.Text = "select";
+			this.btnSelect.UseVisualStyleBackColor = true;
+			this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(819, 277);
+			this.Controls.Add(this.btnSelect);
+			this.Controls.Add(this.tbxSelect);
+			this.Controls.Add(this.lblFilePath);
 			this.Controls.Add(this.btnDeleteData);
-			this.Controls.Add(this.btnShowHIstory);
+			this.Controls.Add(this.btnShowHistory);
 			this.Controls.Add(this.btnShowCalendar);
 			this.Controls.Add(this.btnShowDataList);
 			this.Controls.Add(this.btnShowServiceList);
-			this.Controls.Add(this.gbxPollingMethod);
 			this.Controls.Add(this.gbxSaveType);
 			this.Controls.Add(this.btnSendRequest);
 			this.Controls.Add(this.btnShowEnvironmentData);
@@ -313,8 +319,6 @@ namespace CIOFContractSample
 			((System.ComponentModel.ISupportInitialize)(this.nudPollingRate)).EndInit();
 			this.gbxSaveType.ResumeLayout(false);
 			this.gbxSaveType.PerformLayout();
-			this.gbxPollingMethod.ResumeLayout(false);
-			this.gbxPollingMethod.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -336,13 +340,14 @@ namespace CIOFContractSample
 		private System.Windows.Forms.GroupBox gbxSaveType;
 		private System.Windows.Forms.RadioButton rbtnSaveFile;
 		private System.Windows.Forms.RadioButton rbtnDB;
-		private System.Windows.Forms.GroupBox gbxPollingMethod;
-		private System.Windows.Forms.RadioButton rbtnGetData;
 		private System.Windows.Forms.Button btnShowServiceList;
 		private System.Windows.Forms.Button btnShowDataList;
 		private System.Windows.Forms.Button btnShowCalendar;
-		private System.Windows.Forms.Button btnShowHIstory;
+		private System.Windows.Forms.Button btnShowHistory;
 		private System.Windows.Forms.Button btnDeleteData;
+		private System.Windows.Forms.Label lblFilePath;
+		private System.Windows.Forms.TextBox tbxSelect;
+		private System.Windows.Forms.Button btnSelect;
 	}
 }
 

@@ -47,6 +47,11 @@ namespace CIOFContractSample
 			this.cbxType.SelectedIndex = 0;
 		}
 
+		/// <summary>
+		/// SendRequestボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnSendRequest_Click(object sender, EventArgs e)
 		{
 			if (!controllerModel.IsControllerStart())
@@ -54,7 +59,7 @@ namespace CIOFContractSample
 				MessageBox.Show("コントローラが起動していません。");
 				return;
 			}
-			controllerModel.PostRequestParameterByServiceId(this.localId, this.cbxType.Text, this.textBox1.Text);
+			controllerModel.PostRequestParameterByServiceId(this.localId, this.cbxType.Text, this.txtCondition.Text);
 
 			MessageBox.Show("リクエストを送信しました。");
 		}

@@ -11,7 +11,7 @@ namespace CIOFContractSample.Models
         {
             CreateRecodeTime = DateTime.Now;
             UpdateRecordTime = DateTime.Now;
-            DeleteFlg = false;
+            IsDeleted = false;
         }
 
         /// <summary>作成者</summary>
@@ -23,6 +23,6 @@ namespace CIOFContractSample.Models
         /// <summary>更新時刻</summary>
         public DateTime UpdateRecordTime { get; set; }
         /// <summary>論理削除フラグ</summary>
-        public bool DeleteFlg { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

@@ -55,5 +55,17 @@ namespace CIOFContractSample_Factory.Properties {
                 this["LOCAL_PROCESS_ID"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("eventLocalId1")]
+        public string LOCAL_EVENT_ID {
+            get {
+                return ((string)(this["LOCAL_EVENT_ID"]));
+            }
+            set {
+                this["LOCAL_EVENT_ID"] = value;
+            }
+        }
     }
 }

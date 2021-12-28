@@ -18,16 +18,32 @@ namespace CIOFContractSample
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
-
+		/// <summary>
+		/// サービスステータス
+		/// </summary>
 		public ServiceStatus ServiceStatusInfo { get; set; }
+		/// <summary>
+		/// プロセスステータス
+		/// </summary>
 		public ProcessStatus ProcessStatusInfo { get; set; }
+		/// <summary>
+		/// イベントステータス
+		/// </summary>
 		public EventStatus EventStatusInfo { get; set; }
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public ServiceSettingForm()
 		{
 			InitializeComponent();
 		}
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="controller">コントローラモデル</param>
+		/// <param name="serviceStatus">サービスステータス</param>
+		/// <param name="processStatus">プロセスステータス</param>
+		/// <param name="eventStatus">イベントステータス</param>
 		public ServiceSettingForm(ControllerModel controller, 
 			                      ServiceStatus serviceStatus,
 								  ProcessStatus processStatus,
@@ -55,7 +71,11 @@ namespace CIOFContractSample
 			this.cbxEventStatus.SelectedItem = eventStatus.status;
 			this.tbxEventRemarks.Text = eventStatus.remarks;
 		}
-
+		/// <summary>
+		/// updateボタンクリック
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void btnUpdate_Click(object sender, EventArgs e)
 		{
 			ServiceStatusInfo = new ServiceStatus();

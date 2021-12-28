@@ -27,7 +27,10 @@ namespace CIOFContractSample
             // 画面更新
             UpdateShowDatas();
         }
-
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="controller">コントローラモデル</param>
         public HistoryListForm(ControllerModel controller)
         {
             InitializeComponent();
@@ -51,14 +54,14 @@ namespace CIOFContractSample
                 dgvContractMap.Rows.Clear();
                 foreach (var dataMap in db.ContractDataMaps)
                 {
-                    dgvContractMap.Rows.Add(dataMap.ContractID, dataMap.ContractDataID, dataMap.CreateRecodeTime);
+                    dgvContractMap.Rows.Add(dataMap.ContractID, dataMap.TradeDataID, dataMap.CreateRecodeTime);
                 }
 
                 // 取引データID-センサーデータID
                 dgvContractDataSensorDataMap.Rows.Clear();
                 foreach (var dataMap in db.ContractDataSensorDataMaps)
                 {
-                    dgvContractDataSensorDataMap.Rows.Add(dataMap.ContractDataID, dataMap.SensoreDataId, dataMap.CreateRecodeTime);
+                    dgvContractDataSensorDataMap.Rows.Add(dataMap.TradeDataID, dataMap.RecordId, dataMap.CreateRecodeTime);
                 }
 
                 // センサーデータ詳細
@@ -84,7 +87,11 @@ namespace CIOFContractSample
         {
             UpdateShowDatas();
         }
-
+        /// <summary>
+        /// Delete Requestボタンクリック
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSendDeleteRequest_Click(object sender, System.EventArgs e)
         {
             var selectedContractDataId = dgvContractMap.SelectedRows[0].Cells[0].Value as string;

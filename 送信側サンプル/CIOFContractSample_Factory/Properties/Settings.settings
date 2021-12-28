@@ -11,5 +11,8 @@
     <Setting Name="LOCAL_PROCESS_ID" Type="System.String" Scope="User">
       <Value Profile="(Default)">6f56bafa-c922-4330-8b4f-cc999af7846d</Value>
     </Setting>
+    <Setting Name="LOCAL_EVENT_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">eventLocalId1</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

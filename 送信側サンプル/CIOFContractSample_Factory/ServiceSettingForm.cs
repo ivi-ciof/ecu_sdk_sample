@@ -18,15 +18,32 @@ namespace CIOFContractSample_Factory
 		/// コントローラモデル
 		/// </summary>
 		ControllerModel controllerModel = null;
+		/// <summary>
+		/// サービスステータス
+		/// </summary>
 		public ServiceStatus ServiceStatusInfo { get; set; }
+		/// <summary>
+		/// プロセスステータス
+		/// </summary>
 		public ProcessStatus ProcessStatusInfo { get; set; }
+		/// <summary>
+		/// イベントステータス
+		/// </summary>
 		public EventStatus EventStatusInfo { get; set; }
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public ServiceSettingForm()
 		{
 			InitializeComponent();
 		}
-
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		/// <param name="controller">コントローラモデル</param>
+		/// <param name="serviceStatus">サービスステータス</param>
+		/// <param name="processStatus">プロセスステータス</param>
+		/// <param name="eventStatus">イベントステータス</param>
 		public ServiceSettingForm(ControllerModel controller,
 								  ServiceStatus serviceStatus,
 								  ProcessStatus processStatus,
@@ -83,7 +100,7 @@ namespace CIOFContractSample_Factory
 		/// <summary>
 		/// コンボボックス設定
 		/// </summary>
-		/// <param name="comboBox"></param>
+		/// <param name="comboBox">コンボボックスオブジェクト</param>
 		private void SetComboBoxItem(ComboBox comboBox)
 		{
 			comboBox.Items.Add(ServiceStatusConst.NORMAL);

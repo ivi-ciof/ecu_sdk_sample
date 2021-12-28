@@ -5,17 +5,17 @@
     <Setting Name="SAVE_TYPE" Type="System.String" Scope="User">
       <Value Profile="(Default)">data</Value>
     </Setting>
-    <Setting Name="POLLING_TYPE" Type="System.String" Scope="User">
-      <Value Profile="(Default)">get</Value>
-    </Setting>
     <Setting Name="LOCAL_SERVICE_ID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">servicelocalid3</Value>
+      <Value Profile="(Default)">servicelocalid1</Value>
     </Setting>
     <Setting Name="LOCAL_DELETE_SERVICE_ID" Type="System.String" Scope="User">
       <Value Profile="(Default)">local_delete_service_id</Value>
     </Setting>
     <Setting Name="CALENDAR_EVENT_ID" Type="System.String" Scope="User">
       <Value Profile="(Default)">R5VWMHXL79</Value>
+    </Setting>
+    <Setting Name="LOCAL_EVENT_ID" Type="System.String" Scope="User">
+      <Value Profile="(Default)">testeventid1</Value>
     </Setting>
   </Settings>
 </SettingsFile>
